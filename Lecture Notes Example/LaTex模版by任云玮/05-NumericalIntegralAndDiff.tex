@@ -1,0 +1,573 @@
+\section{数值积分与数值微分}
+\subsection{绪论}
+  \begin{thm}[N-L公式]
+    设$\f$和$F$定义在$[a, b]$上，$F \in \ms{C}[a, b]$且在
+    $(a, b)$上成立$F\hp=\f$，则
+    \[
+      \int_a^b \f(x)\rd x = F(b) - F(a).
+    \]
+  \end{thm}
+  \remark
+    N-L公式是求解积分的基本方法. 但是$F(x)$通常是难以求解的，
+    所以需要数值方法.
+
+  \begin{thm}[积分第一中值定理]
+    \label{thm: 积分第一中值定理}
+    设$\f\in\ms{C}[a, b]$，$\g\in\ms{R}[a, b]$且不变号，
+    则存在$\xi\in[a, b]$，成立
+    \[
+      \int_a^b\f(x)\g(x)\rd x = \f(\xi)\int_a^b\g(x)\rd x.
+    \]
+  \end{thm}
+  \proof
+    不妨设$\g(x)\ge 0$. 若$\g(x)\equiv 0$，则结论是显然的.
+    考虑$\g$不恒为零的情况. 由于$\f\in\ms{C}$，所以$\f$在$[a,b]$
+    上可以取到最小值$m$和最大值$M$，则成立
+    \[\begin{split}
+      & m\g(x) \le \f(x)\g(x) \le M\g(x) \\
+      \Rightarrow \quad &
+      m\int_a^b\g(x)\rd x \le \int_a^b\f(x)\g(x)\rd x
+      \le M\int_a^b\g(x)\rd x \\
+      \Rightarrow \quad &
+      m \le \frac{\int_a^b\f(x)\g(x)\rd x}{\int_a^b\g(x)\rd x}
+      \le M
+    \end{split}\]
+    由于连续函数有介质性，所以存在$\xi\in[a, b]$成立
+    \[
+      \f(\xi) = \frac{\int_a^b\f(x)\g(x)\rd x}{\int_a^b\g(x)\rd x}.
+    \]
+    即成立
+    \[
+      \int_a^b\f(x)\g(x)\rd x = \f(\xi)\int_a^b\g(x)\rd x.
+      \quad\blacksquare
+    \]
+  \remark
+    注意，定理要求$\f\in\ms{C}[a, b]$，这在很多情况下是难以
+    满足的. 但是有些时候可以利用证明中的思路，在$\f$不连续的情况
+    下得出同样的结论.
+
+  \begin{pos}
+    \label{pos: 积分第一中值定理2}
+    设$\f\in\ms{C}[a, b]$，$\g\in\ms{R}[a, b]$且不变号，
+    $\psi:[a, b]\to[a, b]$，则存在$\xi\in[a, b]$，使得
+    \[
+      \int_a^b\f(\psi(x))\g(x)\rd x =
+      \f(\xi)\int_a^b\g(x)\rd x.
+    \]
+  \end{pos}
+  \remark
+    证明同\thmref{thm: 积分第一中值定理}是几乎一样的。
+
+  \begin{pos}[中矩形公式]
+    \label{pos: 中矩形公式}
+    设$\f$足够光滑，则
+    \[
+      \int_a^b\f\rd \approx \f\left(\frac{a+b}{2}\right)(b-a).
+    \]
+    且存在$\xi\in[a, b]$，其误差$R(\f)=\lhs-\rhs$满足
+    \[
+      R(\f) = \frac{1}{24}(b-a)^3\f^{\pr\pr}(\xi).
+    \]
+  \end{pos}
+  \proof
+    \[\begin{split}
+      R(\f) &= \int_a^b\f(x)\rd x - (b-a)\f\left( \frac{a+b}{2} \right) = \int_a^b \left[
+        \f(x) - \f\left(\frac{a+b}{2}\right)
+      \right]\rd x
+    \end{split}\]
+    在$x = (a+b)/2$处带Lagrange余项Taylor展开，有
+    \[\begin{split}
+      R(\f) &= \int_a^b\left[ \f\hp\left(\frac{a+b}{2}\right)\left(x - \frac{a+b}{2}\right)
+       + \frac{1}{2}\f^{\pr\pr}(\xi(x))\left(x - \frac{a+b}{2}\right)^2\right]\rd x \\
+       &= \frac{1}{2}\int_a^b\f^{\pr\pr}(\xi(x))\left(x - \frac{a+b}{2}\right)^2\rd x
+    \end{split}\]
+    由于$\xi(x)$的连续性是无法保证的，所以无法直接使用积分中值定理. 但是可以
+    根据\posref{pos: 积分第一中值定理2}得，存在$\zeta\in[a, b]$，成立
+    \[
+      R(\f) = \frac{1}{2}\f^{\pr\pr}(\zeta)\int_a^b\left( x-\frac{a+b}{2} \right)^2\rd x
+      = \frac{1}{24}(b-a)^3\f^{\pr\pr}(\zeta).\quad\blacksquare
+    \]
+
+  \begin{pos}[梯形公式]
+    设$\f$足够光滑，则
+    \[
+      \int_a^b\f(x)\rd x \approx \frac{\f(a)+\f(b)}{2}(b-a)
+    \]
+    且存在$\xi\in[a, b]$，其误差$R(\f)=\lhs-\rhs$满足
+    \[
+      R(\f) = -\frac{1}{12}(b-a)^3\f^{\pr\pr}(\xi).
+    \]
+  \end{pos}
+  \remark
+    证明同\posref{pos: 中矩形公式}的证明是相似的. 实际上梯形公式
+    可以理解为对原有的函数进行线性插值，并用插值结果的积分来近似原函数
+    的积分. 按照这一思路推广，即发现可以用插值多项式的积分来近似原来
+    函数的积分.
+
+  \begin{pos}[Simpson公式]
+    设$\f$足够光滑，则
+    \[
+      \int_a^b\f(x)\rd x \approx \frac{b-a}{6}
+      \left[ \f(a) + 4\f\left(\frac{a+b}{2}\right)+\f(b) \right].
+    \]
+    存在$\xi\in[a,b]$，其误差$R(\f)=\lhs-\rhs$满足
+    \[
+      R(\f) = -\frac{(b-a)^5}{2880}\f^{(4)}(\xi).
+    \]
+  \end{pos}
+  \remark
+    实际上这是以$a$，$b$，$(a+b)/2$作插值节点作二次多项式插值后
+    的函数积分后的结果. 但是若按照之前的思路证明，会发现$g(x)
+    =(x-a)(x-(a+b)/2)(x-b)$在$[a, b]$上是不保号的，所以不能直接
+    沿用之前的做法. 为了让它保号，我们可以采用Hermite插值，具体证
+    法见下. 另外，有人或许会尝试把它拆分到两个区间上，让$\g$分别保号，
+    但这样的做法一般来说是错误的，问题出现在最后一步合并两个区间结果的
+    时候，权重有可能会出现负值.
+  \proof
+    设Hermite插值多项式$H\in P_3$满足$H(a) = \f(a)$，$H(b) = \f(b)$，
+    $H((a+b)/2)) = \f((a+b)/2)$，$H\hp((a+b)/2) = \f\hp((a+b)/2)$.
+    则存在$\xi\in[a, b]$，使其误差满足
+    \[
+      \f(x) - H(x) = \frac{\f^{(4)}(\xi)}{4!}(x-a)\left(\frac{a+b}{2}\right)^2(x-b).
+    \]
+    它在$[a,b]$上是保号的. 对$H(x)$积分即可得$\rhs$. 剩下的内容和之前
+    的证明是相同的. $\blacksquare$
+  \remark
+    根据余项公式可以发现，Simpson公式对于$\f\in P_3$都是精确
+    成立的，基于此思想，定义代数精度.
+
+  \begin{defi}[代数精度]
+    记\footnote{在以后若不特殊说明，此记号都表示在$[a, b]$上的积分. }
+    \[
+      I(\f) = \int_a^b\f(x)\rd x.
+    \]
+    若数值积分公式
+    \[
+      I(\f) \approx Q(\f)
+    \]
+    在$\f\in P_n$时精确成立，在$\f\in P_{n+1}$时不精确成立，则称该
+    求积公式有$n$阶代数精度.
+  \end{defi}
+  \remark
+    代数精度是求积公式精确程度的一个度量，通常希望求积公式有更高的
+    代数精度.
+
+  \begin{defi}[机械求积公式]
+    \label{defi: 机械求积公式}
+    称求积公式为机械求积公式，若它满足
+    \[
+      I(\f) = \sum_{k=0}^nA_k\f(x_k).
+    \]
+    称$x_k\in[a, b]$为求积节点，称$A_k$为求积系数，它的选取与被积函数
+    无关，至于求积节点有关.
+  \end{defi}
+  \remark
+    可以发现这一节中出现的求积公式都是机械求积公式，但它们的误差各不相同.
+    我们希望可以通过恰当地选取求积节点$x_k$和求积系数$A_k$，使得求积公式
+    的代数精度尽可能高. \par
+    若我们希望机械求积公式有$m$次代数精度，即意味着对于$1,x,\dots,x^m$
+    的积分都是精确成立的，即成立非线性方程组
+    \[\begin{split}
+      &\sum A_k = b-a,\\
+      &\sum A_kx_k = \frac{1}{2}(b^2-a^2),\\
+      &\cdots\cdots \\
+      &\sum A_kx_k^m = \frac{1}{m+1}(b^{m+1}-a^{m+1}).
+    \end{split}\]
+    这一方程组求解通常是困难的.
+
+  \begin{defi}[插值求积公式]
+    给定节点$a\le x_0 < \cdots < x_n \le n$处的函数值$\f(x_i)$，
+    构造$n$次Lagrange多项式，则有
+    \[
+      I(\f) \approx \sum_{k=0}^n\left( \int_a^bl_k\rd x \right)\f(x_k).
+    \]
+    $l_k$的定义见\thmref{thm: Lagrange插值法}. 其误差满足
+    \[
+      R(\f) = \frac{\f^{(n+1)}(\xi)}{(n+1)!}\omega_{n+1}(x)
+    \]
+  \end{defi}
+
+  \begin{defi}[收敛]
+    对于求积公式
+    \[
+      \sum_{k=0}^n A_k\f(x_k) \approx \int_a^b\f\rd x
+    \]
+    记$h = \max\{x_i-x_{i-1}\}$，若当$h\to 0$时，$\lhs\to\rhs$，
+    则称求积公式是收敛的.
+  \end{defi}
+
+  \begin{defi}[稳定]
+    设$\tilde{\f}_k$是$\f(x_k)$的近似值. 对于任意的$\vep>0$，
+    如果存在$\delta>0$，只需$|\tilde{\f}_k - \f(x_k)|<\delta$，
+    就成立
+    \[
+      \left| Q(\f) - Q(\tilde{\f}) \right| =
+      \left| \sum_{k=0}^nA_k(\f(x_k) - \tilde{\f}_k) \right| < \vep,
+    \]
+    则称求积公式是稳定的.
+  \end{defi}
+  \remark
+    一个求积公式稳定，意味着测量误差并不会随着计算而扩大.
+
+  \begin{thm}[稳定性条件]
+    如果机械求积公式的系数$A_k>0$，则该求积公式是稳定的.
+  \end{thm}
+
+\subsection{Newton-Cotes公式}
+  \begin{thm}[Newton-Cotes公式]
+    将积分区间$[a, b]$ $n$等分，步长$h=\frac{b-a}{n}$，构造插值型
+    求积公式，即
+    \[
+      Q(\f) = (b-a)\sum_{k=0}^n C_k^{(n)}\f(x_k)
+    \]
+    称为Newton-Cotes公式，其中$C_k^{(n)}$称为Cotes系数，为
+    \[
+      C_k^{(n)} = \frac{h}{b-a}\int_0^n \prod_{j=0,\,j\ne k}^n\frac{t-j}{k-j}\rd t
+       = \frac{(-1)^{n-k}}{nk!(n-k)!}\int_0^n\prod_{j=0,\,j\ne k}^n(t-j)\rd t
+    \]
+  \end{thm}
+  \remark
+    当$n\ge 8$的时候，Cotes系数出现负值，意味着测量误差会随着计算而增大，所以
+    $n\ge 8$的Newton-Cotes公式是不用的.
+
+  \begin{thm}[插值型求积公式的代数精度]
+    形如
+    \[
+      Q(\f) = \sum_{k=0}^nA_k\f(x_k)
+    \]
+    的求积公式有$n$次或以上代数精度的充要条件为，它是插值型的.
+  \end{thm}
+  \proof
+    充分性是显然的. 对于必要性，用$Q(\f)$计算$l_k$来得到$A_k$，即
+    \[
+      \int_a^bl_k(x)\rd x = \sum_{j=0}^nA_jl_k(x_j) \quad\Rightarrow\quad
+      A_k = \int_a^bl_k(x)\rd x.\quad\blacksquare
+    \]
+
+  \begin{thm}[偶阶求积公式的代数精度]
+    当$n$为偶数时，$n$阶插值型求积公式至少有$n+1$次代数精度.
+  \end{thm}
+
+\subsection{复合求积公式}
+  即对原积分区间$n$等分，使得每一段长度$h<1$，之后在每一段上
+  分别求积。
+
+  \begin{thm}[复合梯形公式余项]
+    \[
+      T_n(\f) = \frac{h}{2}[\f(a) + 2\sum_{k=1}^{n-1}\f(x_k) + \f(b)]
+    \]
+    其余项为
+    \[
+      R_n(\f) = -\frac{b-a}{12}h^2\f^{\pr\pr}(\eta),\quad
+      \eta\in[a, b]
+    \]
+  \end{thm}
+
+  \begin{thm}[复合Simpson公式]
+    \[
+      S_n = \frac{h}{6}[\f(a) + 4\sum_{k=0}^{n-1}\f(x_{k+1/2})
+      + 2\sum_{k=1}^{n-1}\f(x_k) + \f(b)]
+    \]
+    其余项为
+    \[
+      R_n(\f) = -\frac{b-a}{180}\left(\frac{h}{2}\right)^4\f^{(4)}(\eta),
+      \quad\eta\in[a, b]
+    \]
+  \end{thm}
+
+\subsection{Gauss求积公式}
+  \begin{pos}[求积公式代数精度上限]
+    形如下式的求积公式的代数精度至多为$2n+1$.
+    \[
+      \int_a^b\f(x)\rd x\approx \sum_{k=0}^nA_k\f(x_k).
+    \]
+  \end{pos}
+  \remark
+    根据本节之后的构造，可以发现这个上限是取得到的.
+
+  \begin{defi}[Gauss求积公式]
+    设
+    \begin{equation}
+      \label{equ: 带权求积公式}
+      I(\f) = \int_a^b\f(x)\rho(x)\rd x \approx \sum_{k=0}^nA_k\f(x_k) = Q(\f).
+    \end{equation}
+    若\equref{equ: 带权求积公式}有$2n+1$次代数精度，则称其节点$x_k$为Gauss点，
+    称该公式为Gauss型求积公式.
+  \end{defi}
+  \remark
+    若要解权函数对应的Gauss求积公式，则只需要取$\f(x) = x^k$，$k=
+    0,1,\dots, 2n+1$，解对应的方程组即可. 但由于它是关于$x_k$和
+    $A_k$非线性的方程组，所以需要先确定$x_k$，得到关于$A_k$的线性
+    方程组.
+
+  \begin{thm}
+    节点为$a \le x_0 < \cdots < x_n = b$的带权机械求积公式$Q(\f)$有
+    $n+k$（$0\le k\le n+1$）次代数精度的充要条件为：
+    \begin{enumerate}
+      \item $Q(\f)$为插值型求积公式，
+      \item 对任意$p\in P_{k-1}$，成立
+      \[
+        \int_a^b\rho(x)p(x)\omega_{n+1}(x)\rd x = 0
+      \]
+    \end{enumerate}
+  \end{thm}
+  \proof
+    todo
+
+  \begin{cor}
+    \equref{equ: 带权求积公式}有$2n+1$次代数精度，当且仅当
+    节点$\{x_i\}$是$n+1$次正交多项式的根.
+  \end{cor}
+  \remark
+    若积分区间为$[a, b]$，一般会先变换到$[-1, 1]$上. 之后的讨论
+    中的区间都选取$[-1, 1]$.
+
+  \begin{pos}
+    Gauss求积公式的系数全是正的，从而它是稳定的.
+  \end{pos}
+
+  \begin{thm}
+      Gauss求积公式是收敛的，即
+      \[
+        \lim_{n\to\infty}\sum_{k=0}^nA_k\f(x_k)
+        = \int_a^b\rho\f\rd x.
+      \]
+  \end{thm}
+
+\subsection{Romberg求积公式}
+  \paragraph{动机}
+    在利用复合求积公式的时候，如果需要增加精度，则需要再二分一遍区间.
+    即增加了节点$x_{k+\frac{1}{2}} = \frac{1}{2}(x_k + x_{k+1})$.
+    如果每次增加节点后都需要按照求积公式重新计算，则显然计算量过大并且浪费
+    了先前计算好的结果，所以希望可以充分地利用先前的计算结果来简化计算.
+
+  \begin{alg}[Richardson外推方法]
+    \label{alg: Richardson外推方法}
+    设$Q$为需要计算的值的精确结果，$Q_1(h)$是通过某一算法计算得
+    的$Q$的近似，若误差满足
+    \begin{equation}
+      \label{equ: Q-Q(h)}
+      Q-Q_1(h) = c_1h^{p_1} + c_2h^{p_2} + \cdots = o(h^{p_1-1})
+    \end{equation}
+    其中$0<p_1<p_2<\cdots$与$h$无关. 则令
+    \[
+      Q_{k+1}(h) = \frac{Q_k(h/2) - 2^{-p_k}Q_k(h)}{1-2^{-p_k}}.
+    \]
+    其误差满足
+    \[
+      Q-Q_{k+1}(h) = c_2^*h^{p_2} + c_3^*h^{p_3} + \cdots = o(h^{p_2-1})
+    \]
+  \end{alg}
+  \remark
+    Richardson外推方法意味着如果有二分前的结果$Q(h)$
+    和二分后的结果$Q(h/2)$，那么可以通过这两个结果做一次外推
+    从而得到更高的精度. 并且二分了多少次，就可以外推多少次.
+  \proof
+    根据\equref{equ: Q-Q(h)}，成立
+    \[\begin{split}
+      Q - Q(h/2) &= c_1\left(\frac{h}{2}\right)^{p_1} + c_2\left(\frac{h}{2}\right)^{p_2} + \cdots\\
+      2^{-p_1}(Q-Q(h)) &= c_1\left(\frac{h}{2}\right)^{p_1} + c_22^{-p_1}h^{p_2} + \cdots\\
+    \end{split}\]
+    将上述两式相减，即成立
+    \[\begin{split}
+      &Q-Q(h/2) - 2^{-p_1}(Q-Q(h)) = c_2^*h^{p_2} + c_3^*h^{p_3} + \cdots\\
+      \Rightarrow\quad&
+      Q_2(h) = \frac{Q(h/2) - 2^{-p_1}Q(h)}{1-2^{-p_1}}\quad\blacksquare
+    \end{split}\]
+
+  \begin{pos}
+    复合梯形公式外推一次即得Simpson公式，
+  \end{pos}
+
+  \begin{pos}[复合梯形公式余项]
+    \label{pos: 复合梯形公式余项}
+    对于$[a, b]$进行$n$等分，令$h = (b-a)/n$，考虑复合梯形求积公式
+    \[
+      T(h) = h\left[ \frac{\f(x_0)}{2} + \f(x_1)
+      +\cdots + \f(x_{n-1}) + \frac{\f(x_n)}{2} \right].
+    \]
+    存在与$h$无关的$a_i$，成立
+    \[
+      T(h) = \int_a^b\f\rd x + \sum_{k=1}^\infty a_{2k}h^{2k}.
+    \]
+  \end{pos}
+
+  \begin{alg}[Romberg算法]
+    记$n$次二等分第$m$次外推后的结果是$R(n, m)$，记
+    $h_n = \frac{1}{2^n}(b-a)$，则
+    \[\begin{split}
+      R(0, 0) &= h_1(\f(a) + \f(b)) \\
+      R(n, 0) &= \frac{1}{2}R(n-1, 0)
+      + h_n\sum_{k=1}^{2^{n-1}}\f(a+(2k-1)h_n) \\
+      R(n, m) &= \frac{1}{4^m-1}(
+        4^mR(n,m-1) - R(n-1,m-1)
+      )
+    \end{split}\]
+    其余项是$O(h_n^{2(m-1)})$的.
+  \end{alg}
+  \remark
+    $R(n, 0)$是二等分$n$次后的复合梯形公式的结果，它可以通过
+    重复利用$R(n-1, 0)$中的结果来较快得到. 由于
+    $R(n, m-1)$和$R(n-1, m-1)$的余项满足\algref{alg: Richardson外推方法}
+    中的要求，从而可以进行$n-1$次外推.
+
+\subsection{自适应求积公式}
+  \begin{defi}[后验估计]
+    如果误差的上界是可计算量，则称为\tbf{后验估计}，否则
+    则称为\tbf{先验估计}.\footnote{见\exaref{exa: 刘徽割圆术}.}
+  \end{defi}
+
+  \begin{exa}[刘徽割圆术]
+    \label{exa: 刘徽割圆术}
+    设圆的面积为$S$，它是一个不可计算量. 设圆的内接正$n$变形面积
+    为$S_n$，它是一个可计算量. 则成立刘徽不等式
+    \[
+      S_{2n} < S < S_{2n} + (S_{2n} - S_n)
+      \quad\Rightarrow\quad
+      0 < S - S_{2n} < S_{2n} - S_n.
+    \]
+    它是对于割圆术误差的一个后验估计.
+  \end{exa}
+
+  \begin{thm}[Simpson公式的后验估计]
+    记$S_n(a, b)$为对$[a, b]$区间进行$n-1$次二等分，在每一区间上利用
+    Simpson公式数值积分的结果，记$I(a, b)$为在$[a, b]$上积分$\f$
+    的结果，则成立
+    \[
+      \left| I(a, b) - S_2(a, b) \right|
+      \le \frac{1}{15}| S_2(a, b) - S_1(a, b)|.
+    \]
+  \end{thm}
+  \proof
+    Simpson公式的误差满足
+    \begin{equation}
+      \label{equ: Simpson公式误差}
+      I(a, b) - S_1(a, b) = -\frac{b-a}{180}\left(\frac{h}{2}\right)^2\f^{(4)}(\xi)
+    \end{equation}
+    其中$h = b-a$，$\xi\in[a, b]$. 显然它是一个先验估计. 将$[a, b]$二等分，
+    在每段上利用Simpson公式计算，则有
+    \[\begin{split}
+      I\left(a, \frac{a+b}{2}\right) - S_1\left(a, \frac{a+b}{2}\right)
+      & = -\frac{b-a}{360}\left(\frac{h}{4}\right)^2\f^{(4)}(\eta_1) \\
+      I\left(\frac{a+b}{2}, b\right) - S_1\left(\frac{a+b}{2}, b\right)
+      & = -\frac{b-a}{360}\left(\frac{h}{4}\right)^2\f^{(4)}(\eta_2)
+    \end{split}\]
+    可以发现两个等式的右侧系数是同号的，所以将它们相加，可得
+    \begin{equation}
+      \label{equ: Simpson2公式误差}
+      I(a, b) - S_2(a, b) = -\frac{b-a}{180}\left(\frac{h}{4}\right)^2\f^{(4)}(\eta)
+    \end{equation}
+    我们可以假设$h$足够的小，从而可以有$\xi\approx\eta$，从而根据
+    \equref{equ: Simpson公式误差}和\equref{equ: Simpson2公式误差}，有
+    \[\begin{split}
+       &16(I(a, b) - S_2(a, b)) \approx I(a, b) - S_1(a, b) \\
+      \Rightarrow\quad& |I(a, b) - S_2(a, b)| \le \frac{1}{15}|S_2(a, b) - S_1(a, b)|.
+      \quad\blacksquare
+    \end{split}\]
+
+  \begin{thm}[停机准则]
+    设所要满足的精度为$\vep$，即与精确值间误差小于等于$\vep$，
+    则可设置停机准则为
+    \[\begin{split}
+      |I(a, b) - S_2(a, b)| &\le \vep \\
+      |I(c, d) - S_2(c, d)| &\le \frac{d-c}{b-a}\vep.
+    \end{split}\]
+  \end{thm}
+
+  \begin{alg}[自适应方法]
+    首先利用Simpson公式的后验估计和停机准则，选出划分
+    $a = x_0 < \cdots x_n = b$. 再用Romberg计算各个子区间
+    上的满足一定精度要求的积分值，最后相加. \par
+  \end{alg}
+
+\subsection{数值微分}
+  \begin{defi}[插值型数值微分]
+    \label{defi: 插值型数值微分}
+    给定函数$\f(x)$在$a=x_0 < \cdots < x_n = b$处的函数值
+    $\f(x_k)$，设$P_n(x)$为该插值节点的$n$次插值多项式，用
+    插值多项式在$x_k$处的微分来近似原函数在该点的微分，即
+    \[
+      P_n\hp(x_k) \approx \f\hp(x_k).
+    \]
+    注意，我们仅仅考虑插值节点处的导数.
+  \end{defi}
+
+  \begin{defi}[含重节点的差商]
+    定义
+    \[
+      \f[x_0,\dots,x_n,x_n] = \lim_{\Delta x\to0}
+      \f[x_0,\dots,x_n,x_n+\Delta x].
+    \]
+  \end{defi}
+  \remark
+    根据定义，可以用差商来表示差商的导数，即
+    \[
+      \frac{\rd}{\rd x}\f[x_0,\dots,x_n,x]
+      = \f[x_0, \dots, x_n, x, x].
+    \]
+
+  \begin{thm}[插值型数值微分的误差]
+    设符号同\defref{defi: 插值型数值微分}，则在节点$x_k$处的
+    误差满足
+    \[
+      \f\hp(x_k) - P_n(x_k) = \frac{\f^{(n+1)}(\xi)}{(n+1)!}
+      \omega\hp_{n+1}(x_k),\quad \xi\in[a, b].
+    \]
+  \end{thm}
+  \proof
+    \[\begin{split}
+      &\f(x) = P_n(x) + \f[x_0,\dots,x_n,x]\omega_{n+1}(x)\\
+      \Rightarrow\quad&
+      \f\hp(x) = P\hp_n(x) + \left\{
+        \f[x_0,\dots,x_n,x,x]\omega_{n+1}(x)
+        + \f[x_0,\dots,x_n,x]\omega\hp_{n+1}(x)
+      \right\}.
+    \end{split}\]
+    令$x=x_k$，有$\omega_{n+1}(x_k) = 0$，从而成立
+    \[
+      \f\hp(x_k)-P_n\hp(x_k) = \f[x_0,\dots,x_n,x]\omega\hp_{n+1}(x)
+      = \frac{\f^{(n+1)}(\xi)}{(n+1)!}\omega_{n+1}\hp(x_k).
+      \quad\blacksquare
+    \]
+
+  \begin{cor}[中点方法]
+    设有$x_{k-1} = x_k - h$，$x_k$，$x_{k+1}=x_k+h$，则
+    \[
+      \f\hp(x_k) \approx \frac{\f(x_{k+1}) - \f(x_{k-1})}{2h}.
+    \]
+    其余项满足
+    \[
+      R(\f, x_k) = \frac{\f^{(3)}(\xi)}{6}h^2.
+    \]
+  \end{cor}
+
+  \begin{pos}[待定系数法]
+    考虑数值微分公式
+    \[
+      \f\hp(x_k) = \alpha_i\sum_{i=0}^n\f(x_i).
+    \]
+    利用待定系数法确定$\{\alpha_i\}$，使得$\rhs-\lhs$的余项
+    阶数尽可能高.
+  \end{pos}
+
+  \begin{pos}[外推]
+    中点方法的余项满足Ricahrdson外推的条件，所以可以有
+    \[  \begin{split}
+      G_0(h) &= \frac{\f(x+h) - \f(x-h)}{2h}, \\
+      G_m(h) &= \frac{4^mG_{m-1}(h/2) - G_{m-1}(h)}{4^m-1}.
+    \end{split}\]
+  \end{pos}
+
+  \begin{exa}[测量误差的影响]
+    对于函数$y=\f(x)$，设测量得的函数值为$y_n=\f(x)+\frac{1}{n^2}
+    \sin(n^4x)$，则测量误差满足$\|y-y_n\|_{\infty}=\frac{1}{n^2}$，
+    但是对于误差，成立
+    \[
+      \|y\hp-y\hp_n\|_{\infty}
+      = \|\frac{1}{n^2}n^4\cos(n^4x)\|_{\infty} = n^2.
+    \]
+    可以发现节点越多，误差可能反而越大，这说明了求导运算是不稳定的.
+  \end{exa}
+
+  \paragraph{todo}
+    测量误差与误差分析.

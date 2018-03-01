@@ -1,0 +1,496 @@
+\input{def.tex}
+
+\title{科学计算 笔记}
+\author{任云玮}
+\date{}
+
+\begin{document}
+\lstset{numbers=left,
+  basicstyle=\scriptsize\courier,
+  numberstyle=\tiny\courier\color{red!89!green!36!blue!36},
+  language=C++,
+  breaklines=true,
+  keywordstyle=\color{blue!70},commentstyle=\color{red!50!green!50!blue!50},
+  morekeywords={},
+  stringstyle=\color{purple},
+  frame=shadowbox,
+  rulesepcolor=\color{red!20!green!20!blue!20}
+}
+\maketitle
+\tableofcontents
+\newpage
+\input{01-Intro.tex}
+
+\newpage
+\input{02-Interpolation.tex}
+
+\newpage
+\input{03-Approximation.tex}
+
+\newpage
+\input{04-CalcOfVar.tex}
+
+\newpage
+\input{05-NumericalIntegralAndDiff.tex}
+
+\newpage
+\section{非线性方程求根}
+\subsection{二分法}
+  \begin{thm}[闭区间套定理]
+    设$\{[a_n, b_n]\}$满足
+    \begin{enumerate}
+      \item $[a_n, b_n] \subset [a_{n-1}, b_{n-1}]$，
+      \item 当$n\to\infty$时，$|b_n - a_n|\to 0$.
+    \end{enumerate}
+    则存在$\xi$成立
+    \[
+      \bigcap_{k=0}^{\infty}[a_n, b_n] = \{\xi\}.
+    \]
+  \end{thm}
+
+  \begin{thm}[连续函数零点定理]
+    \label{thm: 连续函数零点定理}
+    设$\f\in\ms{C}[a, b]$且$\f(a)\f(b)<0$，则存在$c\in[a, b]$，
+    成立$\f(c) = 0$.
+  \end{thm}
+  \remark
+    这一定理是多种方程求根方法的基础，下给出构造性的证明，这一证明
+    本身实际上描述了二分法求根的过程.
+  \proof
+    构造如下闭区间套，令$[a_0, b_0]=[a, b]$，$c_n=(a_n+b_n)/2$，
+    如果$\f(c_n)=0$，则结论成立，否则$c_n$至少与$a_n$和$b_n$中的
+    一个异号，取该半个区间为$[a_{n+1}, b_{n+1}]$. 由上述构造可知
+    \[
+      [a_{n+1}, b_{n+1}]\subset[a_n,b_n],\quad
+      |b_n - a_n| = \frac{b-a}{2^n}\to 0.
+    \]
+    从而存在$\xi\in\bigcap_{k=0}^\infty[a_n, b_n]$.
+    若$\f(\xi)\ne 0$，不妨设$\f(\xi) = r>0$，则存在$\delta>0$，
+    在$[\xi-\delta,\xi+\delta]$上$\f(x)>0$恒成立. 取足够大的$n$，
+    即可使$[a_n,b_n]\subset[\xi-\delta,\xi+\delta]$，其中
+    $\f(a_n)\f(b_n)<0$，与$\f$在$[\xi-\delta,\xi+\delta]$保号
+    矛盾，从而$\f(\xi)=0$. $\blacksquare$
+
+  \begin{alg}[二分法求解零点]
+    对区间$n$等分，对每个满足端点函数值异号的区间$[a_k,a_{k+1}]$，
+    按照\thmref{thm: 连续函数零点定理}证明中的方法二分，直到满足
+    $b_n-a_n<\vep$，即与零点误差小于$\vep$为止.
+  \end{alg}
+  \remark
+    二分法实现简单，但是在高维情况下，由于不再有“区间端点”的概念，
+    所以难以推广.
+
+\subsection{不动点法}
+  \begin{defi}[压缩映射]
+    设$\f$将$E\subset\R$映射到$E$上. 称$\f$为压缩映射，
+    若存在常数$l<1$，对任意$x,y\in E$成立
+    \[
+      |\f(x) - \f(y)| \le l|x-y|.
+    \]
+  \end{defi}
+
+  \begin{thm}[压缩映射定理]
+    \label{thm: 压缩映射定理}
+    设$\varphi$是$[a,b]$上的连续压缩映射，则存在唯一的$x\in[a, b]$,
+    成立$\varphi(x) = x$.
+  \end{thm}
+  \proof
+    对于唯一性. 设成立$x_1=\varphi(x_1)$，$x_2=\varphi(x_2)$，则
+    \[
+      |x_1-x_2| = |\varphi(x_1)-\varphi(x_2)|\le l|x_1-x_2|
+      \quad\Rightarrow\quad x_1=x_2.
+    \]
+    对于存在性. 令$F(x)=x-\varphi(x)\in\ms{C}[a, b]$. 若
+    $a=\varphi(a)$或$\varphi(b)$，则得证. 否则由于$\f$映射到$[a,b]$
+    自身，所以成立$a<\varphi(a), \varphi(b)<b$. 则成立
+    $F(a)F(b)<0$，由\thmref{thm: 连续函数零点定理}可知，存在$\xi\in[a,b]$，
+    成立$F(\xi)=0$，即$\xi=\varphi(\xi)$. $\blacksquare$
+  \remark
+    此定理对于任意的完备度量空间都是成立的，且条件中的连续性要求可以略去，
+    证明方法是构造迭代数列$x_{n+1}=\varphi(x_n)$.
+
+  \begin{thm}[余项估计]
+    设$\varphi$是$[a, b]$上压缩常数为$l$的连续压缩映射. 则数列
+    \[
+      x_0 = a,\quad x_{n+1} = \varphi(x_n)
+    \]
+    收敛至$x_*$. 且有估计式
+    \[
+      |x_n - x_*| \le \frac{l^n}{1-l}|x_1-x_0|.
+    \]
+  \end{thm}
+  \proof
+    下证明$\{x_n\}$为Cauchy序列.
+    \[
+      |x_{k+1}-x_k| = |\varphi(x_k) - \varphi(x_{k-1})|
+      \le l|x_k-x_{k-1}| \le \cdots \le l^k|x_1-x_0|.
+    \]
+    所以对于任意的$n$和$p>0$，成立
+    \[
+      |x_{n+p}-x_n|\le \sum_{k=0}^{p-1} |x_{n+k+1}-x_{n+k}|
+      \le |x_1-x_0|\sum_{k=0}^{p-1}l^{n+k}.
+    \]
+    由于$l>0$，根据几何级数的性质，成立
+    \[
+      |x_{n+p}-x_n| \le \frac{l^n}{1-l}|x_1-x_0|.
+    \]
+    当$n\to\infty$时，$\rhs\to 0$，从而$\{x_n\}$是Cauchy序列，
+    所以收敛. 令$p\to\infty$，即得估计式
+    \[
+      |x_n-x_*| \le \frac{l^n}{1-l}|x_1-x_0|.
+      \quad\blacksquare
+    \]
+
+  \begin{defi}[局部收敛]
+    设$\varphi(x)$有不动点$x_*$，则对于迭代法
+    \begin{equation}
+      \label{equ: 迭代法}
+      x_{n+1}=\varphi(x_n).
+    \end{equation}
+    如果存在$x_*$的某个领域$O_\delta(x)$，使得任意$x_0\in O_\delta(x)$，
+    \equref{equ: 迭代法}收敛至$x_*$，则称\equref{equ: 迭代法}局部收敛.
+  \end{defi}
+
+  \begin{thm}[局部收敛的条件]
+    设$x_*$是$\varphi\in\ms{C}^1$的不动点，且$|\varphi\hp(x_*)|<1$，
+    则\equref{equ: 迭代法}在$x_*$处局部收敛.
+  \end{thm}
+  \proof
+    由于$\varphi\hp$是连续的，所以存在$O_\delta(x_*)$，对任意的$x\in
+    O_\delta(x_*)$，成立
+    \[
+      |\varphi\hp(x)| < l < 1.
+    \]
+    从而对于任意的$x,y\in O_\delta(x_*)$，根据中值定理，成立
+    \[
+      |\varphi(x) - \varphi(y)| = |\varphi\hp(\xi)||x-y| < l|x-y|.
+    \]
+    即$\varphi(x)$在$O_\delta(x_*)$上是压缩映射，从而对任意$x_0\in
+    O_\delta(x_*)$，\equref{equ: 迭代法}收敛至$x_*$. $\blacksquare$
+
+  \begin{pos}[不局部收敛的条件]
+    设$x_*$是$\varphi(x)\in\ms{C}^1[a, b]$的不动点，若
+    $\varphi(x)$在$[a, b]$上单调且$|\varphi\hp(x_*)|\ge h>1$，则
+    $\varphi(x)$不局部收敛.
+  \end{pos}
+  \proof
+    由于$\varphi\hp(x_*)>1$且连续，所以存在$\delta>0$，使得在$O_\delta(x_*)$
+    中成立
+    \[
+      |\varphi(x)-x_*| = |\varphi\hp(\xi)(x-x_*)| \ge h|x-x_*|.
+    \]
+    所以对任意的$0<\vep<\delta$，对任意的$x_0\in O_\delta(x_*)
+    \backslash\{x_*\}$，迭代
+    足够多次后成立$|x_n-x_*|>\vep$. 由于$\varphi(x)$单调，所以仅有
+    $x=x_*$满足$\varphi(x)=x_*$. 从而若存在$x_0\in[a, b]$，使迭代数列收敛
+    至$x_*$，则对任意$\vep>0$，存在$n$，使得$x_n\in O_{\vep}(x_*)\backslash\{x_*\}$.
+    对于这样的$n$，继续迭代足够多次后，成立$|x_m-x_*|>\vep$，与收敛矛盾，从而不存在
+    $x_0\in[a, b]$，使得迭代数列收敛. $\blacksquare$
+
+  \begin{defi}[$p$阶收敛]
+    \label{defi: p阶收敛}
+    设$x_*$是$\varphi(x)$的不动点，记迭代误差$e_k=x_k-x_*$，若
+    当$k\to\infty$时，成立
+    \[
+      \frac{e_{k+1}}{e_k^p} \to C \ne 0.
+    \]
+    则称\equref{equ: 迭代法} $p$阶收敛.
+  \end{defi}
+  \remark
+    此定义描述了迭代式收敛的速度.
+
+  \begin{thm}[$p$阶收敛条件]
+    \label{thm: p阶收敛条件}
+    设$x_*$是迭代过程$x_{n+1}=\varphi(x_n)$的不动点，若对正整数$p$，
+    $\varphi^{(p)}$在$x_*$附加连续，且成立
+    \[\begin{split}
+      \varphi\hp(x_*) = \cdots = \varphi^{(p-1)}(x_*) = 0,\quad
+      \varphi^{(p)}(x_*) \ne 0.
+    \end{split}\]
+    则\equref{equ: 迭代法}在$x_*$附近$p$阶收敛.
+  \end{thm}
+  \proof
+    在$x_*$处将$\varphi$ Taylor展开即可. 存在
+    $\xi$在$x_k$和$x_*$之间，成立
+    \begin{equation}
+      \label{equ: 导数为零情况余项}
+      \frac{x_{k+1}-x_*}{(x_k-x_*)^p} = \frac{\varphi^{(p)}(\xi)}{p!}.
+      \quad\blacksquare
+    \end{equation}
+  \remark
+    经实践证明，由于当$k\to\infty$时，$\xi\to x_*$，所以对于前$p-1$阶导数
+    为零的迭代式，使用\equref{equ: 导数为零情况余项}来计算\defref{defi: p阶收敛}中的常数是十分方便的.
+
+
+  \begin{alg}[不动点法]
+    对于方程$\f(x) = 0$，将其变形成等价的$x=\varphi(x)$的形式，
+    且$\varphi$满足在零点处局部收敛，则可以利用迭代数列
+    $x_{n+1} = \varphi(x_n)$来求解方程的根.
+  \end{alg}
+
+  \begin{alg}[Aitken $\Delta^2$加速法]
+    设$\{x_n\}$为一收敛的迭代数列，令
+    \[
+      \bar{x}_{k+1} = x_k - \frac{(x_{k+1}-x_k)^2}{x_k-2x_kx_{k+1}+x_{k+2}}
+      = x_k - \frac{(\Delta x_k)^2}{\Delta^2x_k}.
+    \]
+    $\{\bar{x}_k\}$收敛得比$\{x_k\}$更快，即满足
+    \[
+      \lim_{k\to\infty}\frac{\bar{x}_{k+1}-x_*}{x_k-x_*} = 0.
+    \]
+  \end{alg}
+  \remark
+    这一加速法的思路在于
+    \[
+      x_{n+1}-x_* = \varphi(x_n) - \varphi(x_*) = \varphi\hp(\xi)(x_n-x_*).
+    \]
+    当区间足够小以至$\varphi\hp$变化不大时，可以近似地将$\varphi\hp(\xi)$看作常量.
+    另外，这一做法实际上只是数据的后处理，实际上如果我需要的是$\bar{x}_{n+1}$，那无需计算
+    $\bar{x}_1$，$\dots$，$\bar{x}_n$，而只需利用$x_{n}$，$x_{n+1}$，$x_{n+2}$
+    来计算$\bar{x}_{n+1}$即可.
+
+  \begin{alg}[Steffensen迭代法]
+    \[\begin{cases}
+      y_k = \varphi(x_k),\quad z_k = \varphi(y_k), \\
+      x_{k+1} = x_k - \dfrac{(y_k-x_k)^2}{z_k-2y_k+x_k}.
+    \end{cases}\]
+  \end{alg}
+  \remark
+    这一算法实际上只是将Aitken加速法中的$\bar{x}_n$也加入了
+    迭代序列中.
+
+  \begin{thm}[Steffensen迭代法]
+    若$x_*$是迭代函数
+    \[
+      \psi = x - \frac{(\varphi - x)^2}{\varphi\circ\varphi - 2\varphi + x}
+    \]
+    的不动点，则$x_*$也是$\varphi$的不动点. 反之，若$x_*$是$\varphi$的不动点，
+    $\varphi^{\pr\pr}$存在，且$\varphi\hp(x_*)\ne 1$，则$x_*$也是$\psi$的
+    不动点，且Steffensen迭代法二阶收敛.
+  \end{thm}
+  \remark
+    这一定理表明，就算$\varphi$所对应的迭代序列不收敛，但是对应
+    的Steffensen迭代法的迭代序列还是有可能收敛的.
+
+\subsection{Newton法}
+  \begin{thm}[Newton法]
+    设$x_*$是$\f(x)$的零点且$\f\hp(x_*)\ne 0$，则
+    \[
+      \varphi(x) = x - \frac{\f(x)}{\f\hp(x)}
+    \]
+    当$\f\hp(x_*)\ne 0$时，在$x_*$处局部平方收敛，否则线性收敛.
+  \end{thm}
+  \remark
+    Newton法的动机在于在零点附近，用一个线性函数来近似原函数，即
+    \[
+      \f(x) \approx \f(x_k) + \f\hp(x_k)(x-x_k) \quad\Rightarrow\quad
+      x_{k+1} = x = x_k - \frac{\f(x_k)}{\f\hp(x_k)}.
+    \]
+    则该线性方程的解是原方程的一个近似解. 证明只需利用
+    \thmref{thm: p阶收敛条件}即可.
+
+  \begin{alg}[Newton法]
+    Newton法求根的步骤如下：
+    \begin{enumerate}
+      \item 选定初值$x_0$，计算$\f(x_0)$和$\f\hp(x_0)$；
+      \item 按照公式$x_{n+1} = x_n - \f_n/\f\hp_n$，并
+            计算$\f(x_{n+1})$和$\f\hp(x_{n+1})$；
+      \item 如果$x_n$满足$|\delta|<\vep_1$或$|\f|<\vep_2$，则
+        终止迭代，以$x_n$作为所求根，否则进入步骤4. 此处
+        $\vep_1$，$\vep_2$是允差，而
+        \[
+          \delta =
+          \begin{cases}
+            |x_{n}-x_{n-1}|, & |x_1|<C \\
+            \dfrac{|x_n-x_{n-1}|}{x_n}, |x_1|\ge C
+          \end{cases}
+        \]
+        其中$C$是取绝对误差或相对误差的控制常数，一般取$C=1$.
+      \item 如果迭代次数达到预先规定的$N$，或$\f\hp_n=0$，则方法
+        失败，否则继续迭代.
+    \end{enumerate}
+  \end{alg}
+
+  \begin{thm}[重根情况的Newton法]
+    设$x_*$是$\f(x)$的$m$重根，则根据
+    \[
+      \varphi(x) = x - m \frac{\f(x)}{\f\hp(x)}
+    \]
+    所得的迭代序列，在$x_*$附近平方收敛.
+  \end{thm}
+
+  \begin{thm}[重根情况的Newton法]
+    设$x_*$是$\f(x)$的根，则根据
+    \[
+      \varphi(x) = x - \frac{\f\f\hp}{(\f\hp)^2 - \f\f^{\pr\pr}}
+    \]
+    所得的迭代序列在$x_*$附近平方收敛.
+  \end{thm}
+  \remark
+    这一函数实际上是令
+    \[
+      \mu(x) = \frac{(x-x_*)\g(x)}{m\g(x) + (x-x_*)\g\hp(x)}.
+    \]
+    在考虑$\varphi(x) = x - \mu/\mu\hp$所得到的. 其缺点在于
+    涉及了$\f$的二阶导数.
+
+  \begin{thm}[Newton法的收敛区间]
+    设$\f\in\ms{C}^2[a, b]$，且满足$\f(a)\f(b)<0$，在$[a, b]$上
+    $\f\hp(x)\ne 0$，且$\f^{\pr\pr}$不变号，以及初值$x_0$使得
+    $\f(x_0)\f^{\pr\pr}(x_0)>0$成立. 则Newton法所得序列单调收敛于
+    唯一根$x_*$.
+  \end{thm}
+
+  \begin{pos}[方程组情况的推广]
+    对于$\mbf{F}:\,\R^n\to\R^n$，设$\mbf{x}_0$是它的近似根，
+    则可以构造方程组的Newton方法
+    \[
+      \mbf{x}_{k+1} = \mbf{x}_k - [\mbf{F}\hp(\mbf{x}_k)]^{-1}\mbf{F}(\mbf{x}_k).
+    \]
+    其中$\mbf{F}\hp$为$\mbf{F}$的Jacobi矩阵.
+  \end{pos}
+  \remark
+    这一算法的最大工作量在于求解Jacobi矩阵的逆，即求解线性方程组.
+
+\newpage
+\section{解线性方程组的直接/间接方法}
+\subsection{绪论}
+  本章讨论的问题是线性方程组
+  \begin{equation}
+    \label{equ: 线性方程组}
+    A\mbf{x} = B,\quad A\in\R^{m\times n},\,\mbf{x}\in\R^n,\,B\in\R^m
+  \end{equation}
+  的求解. 讨论问题在于
+  \begin{enumerate}
+    \item \equref{equ: 线性方程组}是否可解.
+    \item 若可解，则如何求解.
+    \item 若无解，则如何求近似.
+  \end{enumerate}
+  其中不可解的情况对应$B$为带有误差的的测量数据，求解$X$使得$A\mbf{x}$
+  在特定含义下距离$B$尽可能接近. 例如考虑最小二乘法，即求解
+  \begin{equation}
+    \label{equ: 最小二乘法}
+    \mbf{x}^* = \agm \frac{1}{2}\|A\mbf{x}-B\|^2_2
+  \end{equation}
+  这一问题实际上就是求解极值.
+
+  \begin{thm}[可解性条件]
+    设$A=(\alpha_1\,\dots\,\alpha_n)$，其中$\alpha_i$为列向量，
+    则以下命题等价
+    \begin{enumerate}
+      \item $A\mbf{x}=B$有解.
+      \item $r(A) = r(\bar{A})$.
+      \item $B\in\spn\{\alpha_1,\dots,\alpha_n\}$.
+    \end{enumerate}
+    其中$r(A)$为$A$的秩，$\bar{A}$为$A$的增广矩阵.
+  \end{thm}
+
+  \begin{lemma}[梯度的定价定义]
+    \label{lemma: 梯度的等价定义}
+    $\f$的梯度$\nabla\f$为对任意方向向量$v$都满足如下条件的函数
+    \[
+      \langle\nabla\f,\,v\rangle = \JD_v\f = \frac{\rd}{\rd\vep}\f(x+\vep v)
+      \bigg|_{\vep=0}.
+    \]
+  \end{lemma}
+
+  \begin{thm}
+    $\f(\mbf{x}) = \frac{1}{2}\|A\mbf{x}-B\|_2^2$的梯度
+    可以被表示为
+    \[
+      \nabla\f(\mbf{x}) = A\tr(A\mbf{x}-B).
+    \]
+  \end{thm}
+  \proof
+    下利用\lemmaref{lemma: 梯度的等价定义}证明. 已知
+    \[
+      \f(\tbf{x}+\vep v) = \frac{1}{2}\langle A\x-B+\vep v,\, A\x-B+\vep v\rangle
+      = \frac{1}{2}\|A\x-B\|_2^2 + \vep\langle A\x-B,\,Av \rangle + \frac{1}{2}\vep^2
+      \|Av\|_2^2.
+    \]
+    所以，在该处对任意方向向量$v$成立
+    \[\begin{split}
+      &\langle\nabla\f(\x),v\rangle = \frac{\rd}{\rd\vep}\f(\x+\vep v)\bigg|_{\vep=0}
+      = \langle A\x-B,\,Av\rangle = \langle A\tr(A\x-B),\, v \rangle.
+    \end{split}\]
+    比较上式的$\lhs$和$\rhs$，可以得
+    \[
+      \nabla\f = A\tr(A\x-B).\quad\blacksquare
+    \]
+
+  \paragraph{todo}
+    $m \ll n$情况
+
+
+\newpage
+\section{附录}
+\subsection{不等式}
+
+  \begin{lemma}[排序不等式]
+    \label{lemma: 排序不等式}
+    对于满足下述条件的$\{a_n\}$，$\{b_n\}$，
+    \[\begin{split}
+      & 0 \le a_1\le a_2\le\cdots\le a_n \\
+      & 0 \le b_1\le b_2\le\cdots\le b_n
+    \end{split}\]
+    则同序相乘求和值最大，逆序最小，即
+    \[
+      \sum_{i=1}^n a_ib_i \ge \sum_{i=1}^n a_ib_{k_i}
+      \ge \sum_{i=1}^n a_ib_{n-i+1}
+    \]
+  \end{lemma}
+
+  \begin{lemma}[算数-几何均值不等式]
+    \[
+      (a_1a_2\cdots a_n)^{1/n} \le \frac{a_1+a_2+\cdots+a_n}{n}
+    \]
+    当且仅当$a_1 = a_2 = \cdots = a_n$时等号成立.
+  \end{lemma}
+  \proof
+    因为有齐次性，所以不妨设$\prod a_i=1$，并令
+    \[
+      a_1=\frac{\alpha_1}{\alpha_2},\quad
+      \dots,\quad
+      a_{n-1} = \frac{\alpha_{n-1}}{\alpha_n},\quad
+      a_n = \frac{\alpha_n}{\alpha_1}
+    \]
+    则只需证明下式即可.
+    \[
+      \frac{\alpha_1}{\alpha_2} + \cdots + \frac{\alpha_n}{\alpha_1}
+      \ge n
+    \]
+    不妨设$\alpha_1 \le \alpha_2 \le \cdots \le \alpha_n$，则根据排序不等式
+    \[
+      \lhs \ge \alpha_1\frac{1}{\alpha_1} + \cdots + \alpha_n\frac{1}{\alpha_n}
+       = n \quad\blacksquare
+    \]
+
+\newpage
+\subsection{积分相关公式}
+  \begin{lemma}[分部积分]
+    设$u,v\in\ms{C}^{n+1}[a, b]$，则成立
+    \[
+      \int_a^buv^{(n+1)}\rd x =
+      [ uv^{(n)} - u\hp v^{(n-1)} + \cdots +  (-1)^nu^{(n)}v]
+      \bigg\vert_a^b + (-1)^{n+1}\int_a^bu^{(n+1)}v\rd x.
+    \]
+  \end{lemma}
+
+\newpage
+\subsection{特殊函数}
+  \begin{defi}[处处连续且不可导]
+    称
+    \[
+      \f(x) = \sum_{n=0}^\infty a^n\cos(b^n\pi x)
+    \]
+    为Weierstrass函数，其中$0<a<1$，$b$为正奇数，且满足
+    \[
+      ab > 1 + \frac{3}{2}\pi.
+    \]
+    它处处连续且处处不可导.
+  \end{defi}
+
+\newpage
+\input{-3-Euler-Maclaurin.tex}
+
+\end{document}
