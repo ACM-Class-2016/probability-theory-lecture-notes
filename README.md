@@ -14,7 +14,7 @@ Lecture notes of Probability Theory.
   - Class 1:
     - [Solution](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/1/Solution_%E7%8E%8B%E5%A4%A9%E5%93%B2.pdf) - 王天哲
     - [解答与想法](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/1/%E8%A7%A3%E7%AD%94%E4%B8%8E%E6%83%B3%E6%B3%95-%E5%90%B4%E7%AB%A0%E6%98%8A.pdf) - 吴章昊
-    - [Solution](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/1/Solution_%E4%B8%81%E5%B0%A7%E5%B0%A7.pdf) - 丁尧尧
+    - [Solution](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/1/Solution_%E4%B8%81%E5%B0%A7%E5%B0%A7.pdf) - 丁尧尧
     
 
 - **Reference Material**
