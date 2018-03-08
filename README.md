@@ -9,9 +9,9 @@ Before pushing your modifications, please sent your *Github Username* to *ZhouFa
 | - | - |
 | Lecture Notes Example | *Templates prepared for the Lecture Notes writers.* |
 | Lecture Notes | *The notes finished.* |
-| Reference Material | *Additional documents for questions* |
-| Reference Notes | *Some Class Notes for reference* |
-| Research on Questions | *Thoughts and Solutions provided by students* |
+| Reference Material | *Additional documents for questions.* |
+| Reference Notes | *Some Class Notes for reference.* |
+| Research on Questions | *Thoughts and Solutions provided by students.* |
 
 - **Lecture Notes Finished**
 
