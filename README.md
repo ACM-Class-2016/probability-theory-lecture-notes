@@ -19,6 +19,7 @@ Before pushing your modifications, please sent your *Github Username* to *ZhouFa
 - **Reference Notes**
   - [Notes for Class 1](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/1/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B001-LYK.pdf) - 李怿铠
   - [Notes for Class 2](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/2/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B002-LYK.pdf) - 李怿铠
+  - [Notes for Class 2 (Correct the solution for 2nd question)](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/2/Elementary%20Probability-%E5%90%B4%E7%AB%A0%E6%98%8A.pdf) - 吴章昊
   - [Notes for Class 3](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/3/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B003-LYK.pdf) - 李怿铠
 
 
