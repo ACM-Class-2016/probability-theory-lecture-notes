@@ -13,7 +13,8 @@ Before pushing your modifications, please sent your *Github Username* to *ZhouFa
 | Reference Notes | *Some Class Notes for reference.* |
 | Research on Questions | *Thoughts and Solutions provided by students.* |
 
-- **Lecture Notes Finished**
+- **Lecture Notes Finished**  
+
   - [Notes for Class 2](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/1/Probability_Theory_Note2.pdf) - 肖云轩
 
 - **Reference Notes**
