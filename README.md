@@ -30,12 +30,12 @@ Before pushing your modifications, please sent your *Github Username* to *ZhouFa
     - [解答与想法](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/1/%E8%A7%A3%E7%AD%94%E4%B8%8E%E6%83%B3%E6%B3%95-%E5%90%B4%E7%AB%A0%E6%98%8A.pdf) - 吴章昊
     - [Solution](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/1/Solution_%E4%B8%81%E5%B0%A7%E5%B0%A7.pdf) - 丁尧尧
     - [Data for Interval Problems](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/ccd2ee39003e9647c08d957b7a457f6218affeac/Research%20on%20Questions/1/Data%20for%20Interval%20Problems/small_data.pdf) - 金之涵
+    - [日出问题](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/1/Sunrise_problem.pdf) - 林耘丰
   - Class 3:
     - [Solution](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/3/Solution_%E7%8E%8B%E5%A4%A9%E5%93%B2.pdf) - 王天哲
     - [Some Thoughts and Solutions](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/3/Thoughts_%E9%87%91%E4%B9%8B%E6%B6%B5.pdf) - 金之涵
     - [A thought to P(AB!=C|ABr=Cr)](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/3/Thoughts_%E4%B8%81%E5%B0%A7%E5%B0%A7.pdf) - 丁尧尧 
     - [Thoughts](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/3/Thoughts_%E5%90%B4%E7%AB%A0%E6%98%8A.pdf) - 吴章昊
-    - [日出问题](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/1/Sunrise_problem.pdf) - 林耘丰
     - [对猎犬问题的补充](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/3/thoughts_Xu.pdf) - 徐子昊
 
 
