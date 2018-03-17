@@ -13,8 +13,10 @@ Before pushing your modifications, please sent your *Github Username* to *ZhouFa
 | Reference Notes | *Some Class Notes for reference.* |
 | Research on Questions | *Thoughts and Solutions provided by students.* |
 
-- **Lecture Notes Finished**  
+- **Lecture Notes Finished**
   - [Notes for Class 2](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/2/Probability_Theory_Note2.pdf) - 肖云轩
+  - [Notes for Class 3](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/3/Probability_Theory_Note3-First_Draft.pdf) - 周久钦
+  - [Notes for Class 4](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/4/Probability_Theory_Note4.pdf) - 吴章昊
 
 - **Reference Notes**
   - [Notes for Class 1](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/1/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B001-LYK.pdf) - 李怿铠
@@ -22,7 +24,6 @@ Before pushing your modifications, please sent your *Github Username* to *ZhouFa
   - [Notes for Class 2 (Correct the solution for Hat Puzzle)](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/2/Elementary%20Probability-%E5%90%B4%E7%AB%A0%E6%98%8A.pdf) - 吴章昊
   - [Notes for Class 3](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/3/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B003-LYK.pdf) - 李怿铠
   - [Notes for Class 4](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/ccd2ee39003e9647c08d957b7a457f6218affeac/Reference%20Notes/4/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B004-LYK.pdf) - 李怿铠
-
 
 - **Research on Questions**
   - Class 1:
@@ -37,7 +38,6 @@ Before pushing your modifications, please sent your *Github Username* to *ZhouFa
     - [A thought to P(AB!=C|ABr=Cr)](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/3/Thoughts_%E4%B8%81%E5%B0%A7%E5%B0%A7.pdf) - 丁尧尧 
     - [Thoughts](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/3/Thoughts_%E5%90%B4%E7%AB%A0%E6%98%8A.pdf) - 吴章昊
     - [对猎犬问题的补充](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/3/thoughts_Xu.pdf) - 徐子昊
-
 
 - **Reference Material**
   - [The Sleeping Beauty Controversy](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Material/The%20Sleeping%20Beauty%20Controversy.pdf)
