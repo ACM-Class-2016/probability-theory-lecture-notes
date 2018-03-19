@@ -38,6 +38,8 @@ Before pushing your modifications, please sent your *Github Username* to *ZhouFa
     - [A thought to P(AB!=C|ABr=Cr)](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/3/Thoughts_%E4%B8%81%E5%B0%A7%E5%B0%A7.pdf) - 丁尧尧 
     - [Thoughts](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/3/Thoughts_%E5%90%B4%E7%AB%A0%E6%98%8A.pdf) - 吴章昊
     - [对猎犬问题的补充](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/3/thoughts_Xu.pdf) - 徐子昊
+- Class 4:
+    - [Solutions](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/4/Solutions-Lecture-4-%E8%8C%83%E8%88%9F.pdf) - 范舟
 
 - **Reference Material**
   - [The Sleeping Beauty Controversy](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Material/The%20Sleeping%20Beauty%20Controversy.pdf)
