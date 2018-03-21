@@ -1,4 +1,4 @@
-﻿# probability-theory-lecture-notes
+# probability-theory-lecture-notes
 
 **Lecture notes of Probability Theory** ( Spring Semester of 2018 - Prof. Wu )  
 Before pushing your modifications, please sent your *Github Username* to *ZhouFan* first.
@@ -40,6 +40,7 @@ Before pushing your modifications, please sent your *Github Username* to *ZhouFa
     - [对猎犬问题的补充](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/3/thoughts_Xu.pdf) - 徐子昊
   - Class 4:
     - [Solutions](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/4/Solutions-Lecture-4-%E8%8C%83%E8%88%9F.pdf) - 范舟
+    - [Solutions](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/4/Thoughts_%E6%9D%8E%E6%B2%90%E9%98%B3.pdf) - 李沐阳
 
 - **Reference Material**
   - [The Sleeping Beauty Controversy](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Material/The%20Sleeping%20Beauty%20Controversy.pdf)
