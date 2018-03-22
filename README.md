@@ -24,6 +24,8 @@ Before pushing your modifications, please sent your *Github Username* to *ZhouFa
   - [Notes for Class 2 (Correct the solution for Hat Puzzle)](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/2/Elementary%20Probability-%E5%90%B4%E7%AB%A0%E6%98%8A.pdf) - 吴章昊
   - [Notes for Class 3](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/3/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B003-LYK.pdf) - 李怿铠
   - [Notes for Class 4](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/ccd2ee39003e9647c08d957b7a457f6218affeac/Reference%20Notes/4/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B004-LYK.pdf) - 李怿铠
+  - [Notes for Class 5](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/5/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B005-LYK.pdf) - 李怿铠
+  - [Notes for Class 6](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/facf3577daf627b5924a5614a70a8162cd503f4d/Reference%20Notes/6/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B006-LYK.pdf) - 李怿铠
 
 - **Research on Questions**
   - Class 1:
