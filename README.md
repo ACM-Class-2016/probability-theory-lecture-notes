@@ -44,7 +44,8 @@ Before pushing your modifications, please sent your *Github Username* to *ZhouFa
     - [Solutions](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/4/Solutions-Lecture-4-%E8%8C%83%E8%88%9F.pdf) - 范舟
     - [Solutions](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/4/Thoughts_%E6%9D%8E%E6%B2%90%E9%98%B3.pdf) - 李沐阳
   - Class 6:
-    - [A proof for Weierstrass Approximation Theorem](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/tree/master/Research%20on%20Questions/6/Proof_for_Weierstrass_Approximation_Theorem.pdf) - 肖云轩  
+    - [A proof for Weierstrass Approximation Theorem](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/tree/master/Research%20on%20Questions/6/Proof_for_Weierstrass_Approximation_Theorem.pdf) - 肖云轩
+    - [Proofs for Chernoff-Hoeffding Theorem](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/tree/master/Research%20on%20Questions/6/Proofs_for_Chernoff-Hoeffding_Theorem.pdf) - 肖云轩  
 
 - **Reference Material**
   - [The Sleeping Beauty Controversy](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Material/The%20Sleeping%20Beauty%20Controversy.pdf)
