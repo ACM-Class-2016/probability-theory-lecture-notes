@@ -1,0 +1,404 @@
+\input{def.tex}
+
+\title{Lecture Notes for Probability Theory --- Class 1}
+\author{Li Yikai}
+\date{}
+
+\begin{document}
+\lstset{numbers=left,
+	basicstyle=\scriptsize\courier,
+	numberstyle=\tiny\courier\color{red!89!green!36!blue!36},
+	language=C++,
+	breaklines=true,
+	keywordstyle=\color{blue!70},commentstyle=\color{red!50!green!50!blue!50},
+	morekeywords={},
+	stringstyle=\color{purple},
+	frame=shadowbox,
+	rulesepcolor=\color{red!20!green!20!blue!20}
+}
+\maketitle
+\tableofcontents
+
+\newpage
+\section{生活中的概率论问题}
+    在这一节中，我们以生活中一些看似有悖常理的问题来引入，带您领略概率论的美妙之处。
+    \subsection{死亡率问题}
+    \paragraph{问题描述}
+        通过调查我们得知，在美国弗吉尼亚州的首府里士满，无论黑人死亡率还是白人死亡率，
+        均低于东部沿海城市纽约。那么我们是否可以得出结论，里士满的人民生活水平比身为
+        世界金融中心纽约还要高呢？
+    \paragraph{问题解答}
+        答案是否定的，因为就比较城市死亡率而言，里士满城市的总人口死亡率未必一定低于
+        纽约。下给出证明：
+        \proof
+        现假设里士满城市的黑人和白人人口总数分别为 $B_R$ 和 $W_R$，两人种年死亡人数分别为 $B_R'$ 和 $W_R'$；纽约城市的黑人和白人人口总数分别为 $B_N$ 和 $W_N$，两人种年死亡人数分别为 $B_N'$ 和 $W_N'$。
+        \par 于是我们有:
+            \[
+                \frac{B_R'}{B_R} < \frac{B_N'}{B_N}
+                \quad
+                ,
+                \quad
+                \frac{W_R'}{W_R} < \frac{W_N'}{W_N}
+            \]
+        \par 分别表明里士满的黑人死亡率和白人死亡率与纽约相比较低。
+        \par 令：
+            \[
+                \lambda_1 = \frac{B_R'}{B_R}
+                \qquad
+                \lambda_2 = \frac{B_N'}{B_N}
+            \]
+            \[
+                \mu_1 = \frac{W_R'}{W_R}
+                \qquad
+                \mu_2 = \frac{W_N'}{W_N}
+            \]
+        \par 要比较两城市的和死亡率
+        \[
+                \frac{B_R' + W_R'}{B_R + W_R}
+                \quad
+                ,
+                \quad
+                \frac{B_N' + W_N'}{B_N + W_N}
+                \eqno(*)
+        \]
+        \par 等价于比较
+        \[
+            \frac{\lambda_1 B_R + \mu_1 W_R}{B_R + W_R}
+            \quad
+            ,
+            \quad
+            \frac{\lambda_2 B_N + \mu_2 W_N}{B_N + W_N}
+        \]
+        \par 其中 $ \lambda_1 < \lambda_2 ,\  \mu_1 < \mu_2 $
+        \par 当 $ \lambda_1 > \mu_2 $ 并且 $B_R$,\ $W_N \to +\infty $ 时，($*$) 中左式大于右式，即里士满城市的总人口死亡率在此种情况下比纽约高。
+        \par 故不能通过题设条件得出里士满城市人民生活水平更高的结论。
+
+\remark
+		或者我们可以通过可视化的方式对于该问题有一个更为直观的理解
+\newpage
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width = 4.3in]{fg_1.jpg}
+		\caption{死亡率问题可视化}
+		\label{fig: 死亡率问题可视化}
+	\end{figure}
+	\paragraph{图像说明} 图中黑色方框的大小代表里士满和纽约两种人口的数量，红色方块的大小体现每年该种人口死亡的人数多少。由可视化图片可以看出，当 $B_R$,\ $W_N \to +\infty $ 时，两个小长方形可忽略，只需考虑两个大长方形产生的影响，由于 $ \lambda_1 > \mu_2 $ ，容易看出里士满城市总人口死亡率更高。
+
+	\subsection{运输问题}
+		\paragraph{问题描述}
+			现有一批货物需要从城市 A 运输到城市 B，其中 A 城市有 $m$ 个出货仓库 $A_1,...,A_m$，出货量分别为 $a_1,...,a_m$； B 城市有 $n$ 个入货仓库 $B_1,...,B_n$，入货量分别为 $b_1,...,b_n$，满足 $	\sum_{i=1}^{m}a_i = \sum_{i=1}^{n}b_i  $ 。设制定的运输计划为 $\chi$，从 $A_i$ 到 $B_j$ 的运输量为 $\chi_{ij}$，单位代价为 $c_{ij}$，则最小运输代价为 $\min \ \sum_{i,j} c_{ij} \chi_{ij} = f(C,a,b) $
+			。我们通常使用“线性规划”的方法来优化这一最小代价，现在的问题是：若所需运输货物的总数量增多，是否存在运输计划使得最小代价降低？
+
+		\paragraph{问题解答}
+			答案是肯定的，我们可以从一个简单的例子入手来理解这一问题。
+			\proof
+			假设初始情况为 $m=n=1$ ，总运输量为 $T$ ，则 $\chi = \left[ \begin{array}{c}
+					T
+			\end{array} \right] $ ；现令 $m=n=2$ ，总运输量为 $2T$ ，$\chi =
+				\left[ \begin{array}{cc}
+					0 & T\\
+					T & 0
+				\end{array} \right] $ 。则总的运输代价由 $ T \times c_{a_1 b_1} $ 变为 $ T \times (c_{a_1 b_2} + c_{a_2 b_1}) $ 。当 $ c_{a_1 b_2} + c_{a_2 b_1} < c_{a_1 b_1} $ 时，显然在运输货物总数量增多的情况下，总运输代价降低。
+				\begin{figure}[htbp]
+					\centering
+					\includegraphics[width = 4.3in]{fg_2.jpg}
+					\caption{运输问题可视化解答}
+					\label{fig: 运输问题可视化解答}
+				\end{figure}
+	\subsection{家庭存在概率问题}
+		\paragraph{问题描述}
+			已知两家庭 $ F_1 $ 、$ F_2 $ 中各有三个小孩，问满足下述条件家庭存在的概率。
+			\par  $ F_1: $ 家中有一个女孩和两个男孩。
+			\par  $ F_2: $ 家中有一个女孩说她并没有姐妹。
+		\paragraph{问题解答}
+			$ 2 \times P(F_1) = 3 \times P(F_2) $
+			\begin{enumerate}[\indent (1)]
+				\item $ P(F_1) = \frac{3}{8} $
+					\proof 三个小孩或男或女，按出生顺序排列将会得到 8 种可能的结果。由于只有一个女孩，故该家庭中只有该女孩为第几胎的区别。故答案为 $ 3 \times \frac{1}{8} = \frac{3}{8} $
+				\item $ P(F_2) = \frac{1}{4} $
+					\proof 由于给定条件是家中的一个女孩的叙述，所以该女孩的存在为已知条件。问题等价于：另外两个孩子均为男孩的概率，易知答案为 $ \frac{1}{4} $
+			\end{enumerate}
+		\remark
+			由这道题可以看出，虽然两个家庭中均为一个女孩和两个男孩，因为条件表述的不同却可得到不同的存在概率。因此，在概率论中对于样本空间的描述至关重要。
+		\paragraph{补充}
+			 用解答 $ (1) $ 的方法容易计算出，生出的三个小孩性别均一样的概率是：$2 \times \frac{1}{8} = \frac{1}{4}$ 。但也有人说，由 “抽屉原理” 可知：三个小孩中，一定有两个的性别是一样的，所以只需剩下的那一位与他们性别一致即可，答案为 $\frac{1}{2}$。
+			\par \quad 此解法错误的原因在于，使用 “抽屉原理” 确定下了两位小孩的性别之后，剩下的那一位小孩与已确定两位性别相同与不同的这两种情况并非是样本空间的等比例划分，不可当作独立事件乘上 $\frac{1}{2}$。
+			\par 用 $0$ 表示女孩，$1$ 表示男孩：
+			\begin{center}
+				$ 001 \quad 010 \quad 100 \quad | \quad 000 $ \\
+				$ 110 \quad 101 \quad 011 \quad | \quad 111 $
+			\end{center}
+			可以看出剩下的那位小孩与他们性别一致的概率实为 $\frac{1}{4}$。
+
+\section{容斥原理}
+	容斥原理在概率论中有着相当重要的应用。
+	\par 在概率论中：
+	\[
+		P(\bigcup_{i=1}^{n}A_i) = \chi_{\bigcup A_i}
+	\]
+	\qquad 其中：
+	\[
+		\chi_{A_i}(x) =
+			\begin{cases}
+			1,  & x \in A_i \\
+			0,  & x \not\in A_i
+			\end{cases}
+	\]
+	\qquad 于是我们有：
+	\[
+		\prod_{i=1}^{n}(1 - \chi_{A_i}) = 1 - \chi_{\bigcup A_i}
+	\]
+	\qquad 由容斥原理公式：
+	\[
+		\chi_{\bigcup A_i} = \sum_{i=1}^{n} \chi_{A_i} - \sum_{1 \le i < j \le n} \chi_{A_i \cap A_j} + \cdots + (-1)^{n-1} \chi_{A_1 \cap \cdots \cap A_n}
+		\eqno{(*)}
+	\]
+	\qquad 以及概率本身为 “线性泛函” 的性质可知，将线性函数 $ \mathcal{F} $ 套用在 $(*)$ 式中时，等式仍然成立，即：
+	\[
+		\mathcal{F} \left( \chi_{\bigcup A_i} \right) = \mathcal{F} \left( \sum_{i=1}^{n} \chi_{A_i} \right) - \mathcal{F} \left( \sum_{1 \le i < j \le n} \chi_{A_i \cap A_j} \right) + \cdots + (-1)^{n-1} \mathcal{F} \left( \chi_{A_1 \cap \cdots \cap A_n} \right)
+	\]
+	\remark
+		朴素的容斥原理采用的是 $(*)$ 式完全展开成 “容斥恒等式”，事实上我们也可以应用 Taylor 展开用近似的方式对该等式进行逼近。
+
+\section{经典的概率论问题}
+	\subsection{Dice Problem}
+		\begin{figure}[htbp]
+			\centering
+			\includegraphics[width = 4in]{sz.jpg}
+		\end{figure}
+		\paragraph{问题描述} 当我们同时抛掷两只正常的骰子 $A$ 和 $B$ ，对每个骰子而言，其顶面的数字为 1 $\sim$ 6 的概率均相等；若我们将两只骰子顶面的数字相加，结果分布在 2 $\sim$ 12，假设获得结果 $X$ 的概率为 $P(X)$ ，则易知 $P(2), \cdots , P(12)$ 并非完全相等。
+		\par 于是有以下问题：
+		\begin{enumerate}[\indent (1)]
+			\item 能否设计出骰子 $A'$ 和 $B'$，使得单独抛掷每个骰子时，其顶面数字为 1 $\sim$ 6 的概率不等，但 $P(2) = \cdots = P(12)$ ？
+			\item 能否修改骰子 $A$ 和 $B$ 各面数字，使得 $P(2) = \cdots = P(12)$ ？
+			\item 能否结合 $(1) (2)$ 同时修改数字以及概率，使得 $P(2) = \cdots = P(12)$ ？
+		\end{enumerate}
+		\paragraph{问题解答}
+		\begin{enumerate}[\indent (1)]
+			\item 答： 这是不可能做到的，下给出证明。
+			\proof 假设单独抛掷每个骰子时，其顶面数字为 $i$ 的概率分别为 $p_i$ 和 $  q_i (1 \le i \le 6) $。由于获得加和结果 $7$ 的情况有 $1+6, \  6+1, \  2+5 \  \cdots $， 所以我们有： $$ \frac{1}{11} \ge p_1 p_6 + p_6 p_1 $$
+			由等价变换可得： $$p_1 p_6 + p_6 p_1 = p_1 q_1 \times{ \frac{p_1 q_6}{p_1 q_1} } + p_6 q_6 \times{ \frac{p_6 q_1}{p_6 q_6} } $$
+			 又因为 $ P(2) = p_1 q_1 = P(12) = p_6 q_6 = \frac{1}{11} $，带入上式由基本不等式可得：
+			 $$ \frac{1}{11} \ge p_1 p_6 + p_6 p_1 = p_1 q_1 \times{ \frac{p_1 q_6}{p_1 q_1} } + p_6 q_6 \times{ \frac{p_6 q_1}{p_6 q_6} }  = \frac{1}{11} \left( \frac{q_6}{q_1} + \frac{q_1}{q_6} \right) \ge \frac{2}{11} $$
+			 矛盾！
+			\item 答： 这是不可能做到的。假设抛掷后骰子 $A$ 顶面数字为 $a$，骰子 $B$ 顶面数字为 $b$，则两者组成的有序对 $(a,b)$ 共有 $36$ 种可能，分别对应着加和结果 $2 \sim 12$ 中的一种。由于 $P(2) = \cdots = P(12) = \frac{1}{11}$, 而 $36 \times \frac{1}{11}$ 不为整数，故不可能。
+			\item 答： 这是不可能做到的。参见附录 $A.2.1$。
+
+		\end{enumerate}
+	\subsection{Sleeping Beauty Problem}
+		\begin{figure}[htbp]
+			\centering
+			\includegraphics[width = 2.5in]{fg_2.png}
+			\caption{Sleeping Beauty innocently dreaming about the coin.}
+			\label{fig: Sleeping Beauty innocently dreaming about the coin.}
+		\end{figure}
+		\paragraph{问题描述}
+			Sleeping Beauty agrees to the following experiment. On Sunday, she is put to sleep, and a fair coin is flipped. If it comes up Heads, she is awakened on Monday morning; if Tails, she is awakened on Monday morning and again on Tuesday morning. In all cases, she is not told the day of the week, is put back to sleep shortly after, and will have no memory of any Monday or Tuesday awakenings.
+			When Sleeping Beauty is awakened on Monday or Tuesday, what—to her—is  the probability that the coin came up Heads?
+		\paragraph{问题解答}
+			参见 \url{https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Material/The%20Sleeping%20Beauty%20Controversy.pdf} 以及附录 $A.3.1$ 中的讨论。
+
+	\subsection{Three Prisoners Problem}
+		\paragraph{问题描述}
+		Three prisoners, A, B and C, are in separate cells and sentenced to death. The governor has selected one of them at random to be pardoned. The warden knows which one is pardoned, but is not allowed to tell. Prisoner A begs the warden to let him know the identity of one of the others who is going to be executed. "If B is to be pardoned, give me C's name. If C is to be pardoned, give me B's name. And if I'm to be pardoned, flip a coin to decide whether to name B or C."
+		\par \indent
+		The warden tells A that B is to be executed. Prisoner A is pleased because he believes that his probability of surviving has gone up from 1/3 to 1/2, as it is now between him and C. Prisoner A secretly tells C the news, who is also pleased, because he reasons that A still has a chance of 1/3 to be the pardoned one, but his chance has gone up to 2/3. What is the correct answer?
+
+		\paragraph{问题解答}
+		Call  $A$ , $B$ and $C$ the events that the corresponding prisoner will be pardoned, and $b$ the event that the warden tells A that prisoner B is to be executed, then, using \textbf{Bayes' theorem}, the posterior probability of A being pardoned, is:
+		$$
+			P(A|b) = \frac{P(b|A)P(A)}{P(b|A)P(A) + P(b|B)P(B) + P(b|C)P(C)} =
+		$$
+		$$
+			= \frac{ \frac{1}{2}\times\frac{1}{3} }{ \frac{1}{2}\times\frac{1}{3} + 0\times\frac{1}{3} + 1\times\frac{1}{3} } = \frac{1}{3}
+		$$
+		\par The probability of C being pardoned, on the other hand, is:
+		$$
+			P(C|b) = \frac{P(b|C)P(C)}{P(b|A)P(A) + P(b|B)P(B) + P(b|C)P(C)} =
+		$$
+		$$
+			= \frac{ 1\times\frac{1}{3} }{ \frac{1}{2}\times\frac{1}{3} + 0\times\frac{1}{3} + 1\times\frac{1}{3} } = \frac{2}{3}
+		$$
+
+		The crucial difference making A and C unequal is that
+		$ P(b|A) = \frac{1}{2} $ but $ P(b|C) = 1 $. If A will be pardoned, the warden can tell A that either B or C is to be executed, and hence $ P(b|A) = \frac{1}{2} $; whereas if C will be pardoned, the warden can only tell A that B is executed, so $ P(b|C) = 1 $.
+
+
+	\subsection{Diagonal Problem}
+		\paragraph{问题描述}
+	 	现有一个 $n \times n$ 的网格，我们从左下角出发。抛掷硬币决定移动方向，若正面朝上则向上走一格，否则向右一格，如此移动 $2n$ 步后恰好到达网格的右上角。假设我们在网格对角线上方时向上移动次数为 $U$，在对角线下方时向右移动次数为 $R$，一个很显然的观察结果为：$U + R = n$。所以现在的问题是：在所有可能出现的结果中，$U$ 和 $R$ 所构成的二元组 $(U, R)$ 在 $U = 0, \cdots ,n$ 时出现的概率分别为多少？
+		\begin{figure}[htbp]
+		\centering
+		\includegraphics[width = 3in]{fg_3.png}
+		% \caption{死亡率问题可视化}
+		% \label{fig: 死亡率问题可视化}
+		\end{figure}
+		\paragraph{问题解答}
+			参见附录 $A.1.1$
+
+	\subsection{Sum-Free Problem}
+		\paragraph{问题描述}
+	 	If $\ \forall \  i,j,k \le |A|, \nexists \  \ a_i,a_j,a_k \ \  s.t. \  \  a_i + a_j = a_k $, we call set $A$ the Sum-Free set. So try to proof the statement: Every set $B = \left\{ b_1, \cdots , b_n \right\} $ of nonzero integers contain a Sum-Free subset of size $> \frac{n}{3}$.
+		\paragraph{问题解答}
+		 在解决这道题的过程中，我们首先找到一个具有 Sum-Free 性质的特例集合，而后由取模带来的随机性质对其进行"传染"，使证明对一切集合均成立。
+		 \paragraph{引理}
+		 集合 $\left\{ 1,2, \cdots ,3k+1 \right\}$ 的子集$  \left\{ k+1, k+2, \cdots , 2k+1 \right\} $ 为 Sum-Free。
+		 \paragraph{引理证明}
+		 设 $E = \left\{ k+1, k+2, \cdots , 2k+1 \right\} $，则 $\forall e_i, e_j \in E$ 有 $ e_i + e_j \ge 2k+2 > \max\{E\} $ 所以 $E$ 为 Sum-Free。
+		\proof
+	 	取 $p$ 满足 $p = 3k+2 $ 并且 $p \nmid b_1 \cdots b_n $，构造矩阵：
+	 	$$ \left( \begin{array}{cccc}
+						b_1 & b_2 & \cdots & b_n \\
+						2b_1 & 2b_2 & \cdots & 2b_n \\
+						\vdots & \vdots & \ddots & \vdots \\
+						(p-1)b_1 & (p-1)b_2 & \cdots & (p-1)b_n
+					\end{array}
+					\right) $$
+		故矩阵的每一列均构成模 $p$ 的完全剩余系，取模结果构成集合 $\left\{ 1,2, \cdots ,3k+1 \right\}$，其中一定存在 $k+1$ 个数模 $p$ 结果分别为 $k+1, \cdots ,2k+1$，将这些数打上标记。
+		故矩阵中有超过 $\frac{1}{3}$ 的数被打上了标记，由\textbf{鸽巢原理}可知，矩阵中一定存在某行，其中有超过 $\frac{1}{3}$ 的数带有标记，设其为 $C \cdot b_{s_1}, C \cdot b_{s_2}, \cdots ,C \cdot b_{s_n}$ 属于第 $C$ 行。由于这些数模 $p$ 的结果属于 $E = \left\{ k+1, k+2, \cdots , 2k+1 \right\} $ 由 $E$ 的 Sum-Free 以及取模运算的性质可知：
+		$$
+			\nexists \  C \cdot b_{s_u} + C \cdot b_{s_v} = C \cdot b_{s_w}
+		$$
+		即集合 $\{ C \cdot b_{a_i} \}$ 为 Sum-Free，同时：
+		$$
+			\nexists \ b_{s_u} + b_{s_v} = b_{s_w}
+		$$
+		即集合 $\{b_{a_i}\}$ 为 Sum-Free，且 $| \{b_{a_i}\} | > \frac{n}{3}$ 。
+		\par
+		So there exists a Sum-Free subset of B with size $> \frac{n}{3}$
+
+	\subsection{Throwing Line Problem}
+		\paragraph{问题描述}
+		   向 $\left[0, 1\right]$ 区间中随意地添加长度小于 $1$ 的线段，证明：存在某条线段覆盖或部分覆盖其他所有线段的概率为： $\frac{2}{3}$
+		   \begin{figure}[htbp]
+	   		\centering
+	   		\includegraphics[width = 4in]{fg_4.jpg}
+	   		% \caption{死亡率问题可视化}
+	   		% \label{fig: 死亡率问题可视化}
+		   	\end{figure}
+		\paragraph{问题解答}
+		   暂略
+
+		\paragraph{问题推广}
+			\begin{enumerate}[\indent A:]
+				\item
+				Throwing arc
+				\par 在单位圆中随意地添加以中心为圆心的圆弧，问存在某条圆弧其圆心角内部覆盖或部分覆盖其他所有圆弧的概率？
+				\item Throwing square
+				\par 在单位正方形中随意的添加小矩形，问存在某个矩形覆盖或完全覆盖其他所有矩形的概率？
+			\end{enumerate}
+			\begin{figure}[htbp]
+			\centering
+			\includegraphics[width = 4in]{fg_5.jpg}
+			% \caption{死亡率问题可视化}
+			% \label{fig: 死亡率问题可视化}
+			\end{figure}
+
+\begin{appendix}
+	\section{附录}
+		\subsection{Solution provided by Ding yaoyao}
+			\subsubsection{3.4}
+				Define the number of $k$ upward walks above the straight line from $(0,0)$ to $(n,n)$ to be $f(n,k)$. We have that
+				$$
+					f(n,k) = \frac{1}{n+1}\binom{2n}{n} = C_n
+				$$
+		\proof
+			Proof by induction.
+
+			We define the proposition $P(N)$ to be that the property described in the problem holds for all $0 \leq n \leq N$.
+
+			It is easy to check that $P(0)$ and $P(1)$ is true.
+
+			Assuming that $P(N)$ is true, we will prove that $P(N+1)$ is also true.
+
+			We enumerate the last position $(x,y)$ the person arrives that satisfies $x = y$. Assume the position is $(r,r)$, where $0 \leq r \leq N$. We use the technique of series to express the schemes:
+			$$
+				(f(r,0)x^0+f(r,1)x^1+f(r,2)x^2+\cdots +f(r,r)x^r)(C_{N-r}x^0 + C_{N-r}x^{N-r})
+			$$
+			\indent where the coefficient of $x^i$ equals to the number of schemes that there are $i$ upward walks from $(0,0)$ to $(N+1,N+1)$ above the straight line in such condition. The second part is the schemes that walks from $(r,r)$ to $(N+1,N+1)$ and never arrives the positions on the straight line between $(r,r)$ and $(N+1,N+1)$.
+
+			By the assumption, $f(r,i) = C_r$, this formula can also be expressed as
+			$$
+				(C_rx^0+C_rx^1+C_rx^2+\cdots +C_rx^r)(C_{N-r}x^0 + C_{N-r}x^{N+1-r})
+			$$
+			We can sum them up when $0 \leq r \leq N$:
+			\[
+			\begin{split}
+			 & \sum_{r = 0}^{N}(C_rx^0+C_rx^1+C_rx^2+\cdots +C_rx^r)(C_{N-r}x^0 + C_{N-r}x^{N+1-r}) \\
+			=& \sum_{r = 0}^{N}C_rC_{N-r}(x^0+x^1+\cdots+x^r)(x^0+x^{N+1-r}) \\
+			=& \sum_{r = 0}^{N}C_rC_{N-r}(x^0+x^1+\cdots+x^r) + \sum_{r = 0}^{N}C_rC_{N-r}(x^{N+1-r}+\cdots+x^{N+1}) \\
+			=& \sum_{r = 0}^{N}C_rC_{N-r}(x^0+x^1+\cdots+x^r) + \sum_{r = 0}^{N}C_rC_{N-r}(x^{r+1}+\cdots+x^{N+1}) \\
+			=& \sum_{r = 0}^{N}C_rC_{N-r}(x^0+x^1+\cdots+x^{N+1}) \\
+			=& C_{N+1}(x^0+x^1+\cdots+x^{N+1})
+			\end{split}
+			\]
+			which means that $f(N+1,r) = C_{N+1}$ for all $0 \leq r \leq N+1$ and $P(N+1)$ is true.
+
+	\subsection{Solution provided by Wang tianzhe}
+		\subsubsection{3.1 (3)}
+		我们考虑将这两个骰子用母函数$f$和$g$表示。\\
+		\indent
+		记$f = \sum_{i=1}^6 p_{i}*x^{q_i}, g = \sum_{i=1}^6 r_{i}*x^{s_i}$。
+		\\ \indent 容易发现我们可以通过让两个骰子一个增加相同的数，一个减少相同的数使得所有的点数都为整数。\\
+		\indent 于是我们可以固定$q_i,s_i(i=1,2,...,6)$为整数。
+		从而原问题等价于$f*g=\frac{1}{11} * x^2 * \frac{x^{11} - 1}{x-1} $
+		能否分成2个至多为6项的实系数多项式的乘积。\\
+		\indent 我们注意到$R[x]$为$UFD$（唯一分解整环），也就是说$\frac{1}{11} * x^2 * \frac{x^{11} - 1}{x-1}$存在唯一分解。\\
+		只需要考虑$fg = \frac{1}{11} * x^2 * \prod_{k=1}^5(x^2-2cos\frac{2k\pi}{11} x+1)$
+		能否分成2个至多为6项的实系数多项式的乘积。\\
+		\indent 通过利用程序枚举32种可能验证，可得不存在成立的分解方法，下附验证程序：
+		% \newpage
+		\begin{lstlisting}
+		#include<bits/stdc++.h>
+		using namespace std;
+		const double pi = acos(-1), eps = 1e-10;
+		double a[10];
+		double t[10][111];
+		double x[111], y[111], tmp[111];
+		bool ok(double *x) {
+		int cc = 0;
+		for (int i = 0; i < 50; ++i) {
+			if (x[i] < -eps) return 0;
+			if (x[i] > eps) ++cc;
+		}
+		return cc <= 6;
+		}
+		void work(double *x, int p) {
+		for (int j = 0; j <= 50; ++j) tmp[j] = 0;
+		for (int j = 0; j <= 50; ++j)
+			for (int k = 0; k <= 2; ++k) tmp[j + k] += x[j] * t[p][k];
+		for (int j = 0; j <= 50; ++j) x[j] = tmp[j];
+		}
+		int main() {
+		for (int i = 1; i <= 5; ++i) a[i] = 2 * cos(2. * pi * i / 11);
+		for (int i = 1; i <= 5; ++i) {
+			t[i][0] = 1;
+			t[i][1] = -a[i];
+			t[i][2] = 1;
+		}
+		for (int s = 0; s < 32; ++s) {
+			for (int i = 1; i <= 50; ++i) x[i] = y[i] = 0;
+			x[0] = y[0] = 1;
+			for (int i = 1; i <= 5; ++i) if (s >> (i - 1) & 1) {
+				work(x, i);
+			} else work(y, i);
+			printf("%d : %d %d\n", s, ok(x), ok(y));
+			if (ok(x) && ok(y)) {
+				cout << s << endl;
+				puts("OK");
+				return 0;
+			}
+		}
+		puts("Failed to factorize!");
+		return 0;
+		}
+		\end{lstlisting}
+	\subsection{Solution provided by Wu zhanghao}
+		\subsubsection{3.2}
+		关于硬币Heads的概率，论文中做了详细的讨论，将$\frac{1}{3}$的支持者“thirders”和$\frac{1}{2}$的支持者“halfers”以及一些持其他观点人的论断和依据都予以罗列。我个人还是更加认同thirders的Repetition观点。我认为对于SB而言，Tail会使她醒来两次，而Head只会让她醒来一次，这就造成了她醒来所遇到的硬币面并不是等概率的。\par
+		论文中提到了halfers的一种看法是，在SB睡前硬币的概率应当为$\frac{1}{2}$，而在之后的醒来中，信息量并没有增加，因此，概率不发生变化。而论文在Information revisited，thirders的反驳中提到，information应该还来源于时间是否被测量，时刻是否应该被记作一个时刻，从而表明信息量发生了变化。但是，我认为也许原本周日时SB预测和周一周二时的概率是两次不同的试验，前者是将硬币的正反结果作为样本空间，而后者既然是对于SB而言的就应该将周一、周二的计入到样本空间中。它们的样本空间也就存在差异，并不能直接过渡。在我看来，题目中所求的概率是对于SB而言的，对于SB，其实相当于每当硬币为Tail时，结果都会被“记录”两次，而Head时只会有一次。引出的结论应和均等的记录正反面不同。\par
+		对于这篇论文最后所提到的一些内容，我还存在一些疑问。Optional Stopping Theorem关于下雪天的概率描述，按照我的理解是将时间要素考虑在内，也就是随着时间的迁移，learning增加使得概率发生变化。我感到有一些困惑。对于下雪天的这个例子，在一个密闭的环境下，试验的结果应该只反映在7点那一个时刻上，在之前的时刻中，钟声必定不会响起，那么概率的不断减小究竟如何与时间建立定量的联系呢？
+
+\end{appendix}
+
+\end{document}
