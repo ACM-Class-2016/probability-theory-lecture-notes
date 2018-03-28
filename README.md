@@ -14,7 +14,8 @@ Before pushing your modifications, please sent your *Github Username* to *ZhouFa
 | Research on Questions | *Thoughts and Solutions provided by students.* |
 
 - **Lecture Notes Finished**
-  - [Notes for Class 2](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/2/Probability_Theory_Note2.pdf) - 肖云轩
+  - [Notes for Class 1](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/1/Lecture%20Notes%20for%20Probability%20Theory%20-%20Class%201.pdf) - 李怿铠
+  - [Notes for Class 2](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/2/Probability_Theory_Note2.pdf) - 肖云轩
   - [Notes for Class 3](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/3/Probability_Theory_Note3-First_Draft.pdf) - 周久钦
   - [Notes for Class 4](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/4/Probability_Theory_Note4.pdf) - 吴章昊
 
@@ -26,6 +27,7 @@ Before pushing your modifications, please sent your *Github Username* to *ZhouFa
   - [Notes for Class 4](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/ccd2ee39003e9647c08d957b7a457f6218affeac/Reference%20Notes/4/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B004-LYK.pdf) - 李怿铠
   - [Notes for Class 5](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/5/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B005-LYK.pdf) - 李怿铠
   - [Notes for Class 6](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/facf3577daf627b5924a5614a70a8162cd503f4d/Reference%20Notes/6/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B006-LYK.pdf) - 李怿铠
+  - [Notes for Class 7](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/7/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B007-LYK.pdf) - 李怿铠
 
 - **Research on Questions**
   - Class 1:
