@@ -108,13 +108,50 @@
 		
 	\end{prob}
 
-	\begin{home} [概率链]
+	\begin{prob} [概率链]
 		
 		现在有17个点, 分别是$(1, 1, 1), (1, 1, 2), (1, 1, 3), (1, 2, 1), (1, 2, 2), (1, 3, 1), (1, 3, 2),\\ (1, 4, 1), (2, 1, 1), (2, 1, 2), (2, 2, 1), (2, 2, 2), (2, 3, 1), (3, 1, 1), (3, 1, 2), (3, 2, 1), (4, 1, 1)$. 我们把点按$1\cdots 17$编号, 并建立$\{1\cdots 17\}$到$\{1\cdots 17\}$的双射$f$(也就是每个点映射到一个整数), 使得$\forall u, v \in \{1\cdots 17\} \quad u.x \le v.x \quad \& \quad u.y \le v.y \quad \& \quad u.z \le v.z \Rightarrow f_u \le f_v$, 此时我们称$u$控制了$v$.
 		
 		Counting: $I \subseteq \{1 \cdots 17\}$, 使得$P(\bigcap\limits_{u \in I}E_u) = \prod\limits_{u \in I}P(E_u)$, 其中$E_u$表示$f_u$是$u$控制的点中最小的事件.
+		
+		\sol
+		
+		这里我给出一个命题的等价表述, 计算细节是简单的, 不赘述, 请读者自行解决.
+		
+		这个问题其实是说给定有限集合$\mathbb{A}$上的偏序关系$\le$(未必是全序), 我们给每一个元素赋予一个$1 \cdots |\mathbb{A}|$的值$a_u$, 使得每个元素的值互不相同并且满足$u \le v \Rightarrow a_u \le a_v$. 定义$E_u$为$u$在其后继中值最小的事件, 以此为基础, 问哪些$\mathbb{A}$的子集$I$中事件独立, 即$P(\bigcap\limits_{u \in I}E_u) = \prod\limits_{u \in I}P(E_u)$.
+		
+		首先, 第一个发现是$I$整体的独立性完全等价于$I$中任意两个事件互相独立. 当然这个也可以从我之后的证明中得到. 
+		
+		结论是$I$满足条件等价于任意两个$I$中的元素要么其中一个是另一个后继, 要么后继无交集. 这种说法也等价于$I$中的偏序关系是一个森林. 这里我只给出大致证明.
+		
+		显然, 类似二叉树$\uppercase\expandafter{\romannumeral4}$可知森林一定满足条件.
+		
+		当$I$不是森林时, 显然如果有多个联通块, 这些块之间是独立的, 概率相乘, 于是我们只需要考虑一个联通块的情况. 另外, 如果有一个点的后继是整个$\mathbb{A}$, 那么这个问题等价于把这个点去掉, 于是我们只考虑不存在这样的点的情况, 也就是有多个点是全局极小的(定义在偏序关系上), 不妨设为$1\cdots m$, 并设它们后继(包括自己)的数量分别为$s_1 \cdots s_m$. 我们记$n = |\mathbb{A}| < \sum\limits_{i = 1}^{m}s_i$. 小于是由于这些点在同一个联通块中, 后继总有交集.
+		
+		那么我们只要证明下式, 之后的结论就是显而易见的了.
+		
+		\begin{equation*}
+			P(\bigcap\limits_{i=1}^{m}E_i) > \prod\limits_{i=1}^{m}P(E_i)
+		\end{equation*}
+		
+		这里我们不妨归纳.
+		
+		$m = 1$时可以取等号
+		
+		假设$m = k$已经成立, 当$m = k + 1$时. 记$T = \prod\limits_{i = 1}^{k+1}s_i^{-1}$. 
+		
+		\begin{equation*}
+			P(\bigcap\limits_{i=1}^{k+1}E_i) 
+			= \sum\limits_{i=1}^{k+1}P(a_i=1)P(\bigcap\limits_{i=1}^{k+1}E_i|a_i=1)
+			\geq \sum\limits_{i=1}^{k+1}n^{-1}Ts_i
+			> T
+		\end{equation*}
+		
+		由证明过程可以发现$m>2$时等号都不成立, 也就是我们所要证明的.
+		
+		有了森林的结论, 这个问题就变成偏序关系上森林计数问题, 我目前只能采用搜索得出结果, 也就是底图的独立集. 当然, 通过一些技巧, 这个搜索可以做到$n=50$左右.
 
-	\end{home}
+	\end{prob}
 	
 	\begin{prob} [二叉树$\uppercase\expandafter{\romannumeral3}$另解]
 	
