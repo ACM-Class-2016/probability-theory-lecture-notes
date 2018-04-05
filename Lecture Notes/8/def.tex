@@ -1,0 +1,80 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{ctex}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{
+  color,
+  clrscode,
+  amssymb,
+  ntheorem,
+  amsmath,
+  listings,
+  fontspec,
+  xcolor,
+  supertabular,
+  multirow,
+  mathtools,
+  mathrsfs
+}
+\definecolor{bgGray}{RGB}{36, 36, 36}
+\usepackage[
+  colorlinks,
+  linkcolor=bgGray,
+  anchorcolor=blue,
+  citecolor=green
+]{hyperref}
+\newfontfamily\courier{Courier}
+
+\theoremstyle{margin}
+\theorembodyfont{\normalfont}
+\newtheorem{thm}{定理}
+\newtheorem{cor}[thm]{推论}
+\newtheorem{pos}[thm]{命题}
+\newtheorem{lemma}[thm]{引理}
+\newtheorem{defi}[thm]{定义}
+\newtheorem{std}[thm]{标准}
+\newtheorem{imp}[thm]{实现}
+\newtheorem{alg}[thm]{算法}
+\newtheorem{exa}[thm]{例}
+\newtheorem{prob}[thm]{问题}
+\DeclareMathOperator{\sft}{E}
+\DeclareMathOperator{\idt}{I}
+\DeclareMathOperator{\spn}{span}
+\DeclareMathOperator*{\agm}{arg\,min}
+\newcommand{\x}{\mbf{x}}
+\newcommand{\pr}{\prime}
+\newcommand{\tr}{^\intercal}
+\newcommand{\st}{\text{s.t.}}
+\newcommand{\hp}{^\prime}
+\newcommand{\ms}{\mathscr}
+\newcommand{\mn}{\mathnormal}
+\newcommand{\tbf}{\textbf}
+\newcommand{\mbf}{\mathbf}
+\newcommand{\fl}{\mathnormal{fl}}
+\newcommand{\f}{\mathnormal{f}}
+\newcommand{\g}{\mathnormal{g}}
+\newcommand{\R}{\mathbf{R}}
+\newcommand{\Q}{\mathbf{Q}}
+\newcommand{\JD}{\textbf{D}}
+\newcommand{\rd}{\mathrm{d}}
+\newcommand{\str}{^*}
+\newcommand{\vep}{\varepsilon}
+\newcommand{\lhs}{\text{L.H.S}}
+\newcommand{\rhs}{\text{R.H.S}}
+\newcommand{\con}{\text{Const}}
+\newcommand{\oneton}{1,\,2,\,\dots,\,n}
+\newcommand{\aoneton}{a_1a_2\dots a_n}
+\newcommand{\xoneton}{x_1,\,x_2,\,\dots,\,x_n}
+\newcommand\thmref[1]{定理~\ref{#1}}
+\newcommand\lemmaref[1]{引理~\ref{#1}}
+\newcommand\defref[1]{定义~\ref{#1}}
+\newcommand\posref[1]{命题~\ref{#1}}
+\newcommand\secref[1]{节~\ref{#1}}
+\newcommand\equref[1]{(\ref{#1})}
+\newcommand\figref[1]{图 \ref{#1}}
+\newcommand\corref[1]{推论~\ref{#1}}
+\newcommand\exaref[1]{例~\ref{#1}}
+\newcommand\algref[1]{算法~\ref{#1}}
+\newcommand{\remark}{\paragraph{评注}}
+\newcommand{\example}{\paragraph{例}}
+\newcommand{\proof}{\paragraph{证明}}
