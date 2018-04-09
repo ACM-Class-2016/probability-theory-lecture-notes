@@ -1,0 +1,53 @@
+\input{def_Pascalprimer.tex}
+
+\title{Some Thoughts}
+\author{金之涵}
+\date{}
+\begin{document}
+	\lstset{numbers=left,
+		basicstyle=\scriptsize\courier,
+		numberstyle=\tiny\courier\color{red!89!green!36!blue!36},
+		language=C++,
+		breaklines=true,
+		keywordstyle=\color{blue!70},commentstyle=\color{red!50!green!50!blue!50},
+		morekeywords={},
+		stringstyle=\color{purple},
+		frame=shadowbox,
+		rulesepcolor=\color{red!20!green!20!blue!20}
+	}
+	\maketitle
+	\newpage
+	
+	\begin{prob}
+		For a sequence of random variables $X_1, X_2, \cdots$ with Markov property and a function $f$ on $X$. It is obvious that $f(X_1), f(X_2), \cdots$ are also random variables, however not necessarily holding Markov property.
+		
+		\sol
+		
+		In discrete cases, a function on $X$ is a process to merge some states just as what dynamic programming does, which requires the states with similar state transition rules.
+		
+		When $f$ is injective, Markov property must hold. Situation is not consistent on other cases. I only present a simple counterexample.
+		
+		Consider 2 random variables $X_1, X_2$ and the state universe is $X = \{1, 2, 3, 4\}$. The transition matrix $P$ and the function $f$ is following. Let $\mu = \{p_1, p_2, p_3, p_4\}$ be the distribution of $X_1$, then the distribution $\lambda$ of $X_2$ is $\{ 0, 0, p_1 + p_3, p_2 + p_4 \}$. Acted on $f$, $f(\lambda) = \{0, p_1 + p_3, p_2 + p_4\}$, which cannot be expressed as $f(\mu)P^\prime = \{p_1 + p_2, p_3, p_4\}P^\prime$. So $f(X_1), f(X_2)$ do not hold Markov property any more.
+		
+		\begin{equation*}
+			P = {
+				\left[ \begin{array}{cccc}
+				0 & 0 & 1 & 0\\
+				0 & 0 & 0 & 1\\
+				0 & 0 & 1 & 0\\
+				0 & 0 & 0 & 1
+				\end{array} 
+				\right ]}, \quad
+			f(x)=\left\{
+				\begin{aligned}
+				1 &  & x = 1, 2 \\
+				2 &  & x = 3 \\
+				3 &  & x = 4
+				\end{aligned}
+				\right.
+		\end{equation*}
+		
+		
+	\end{prob}
+
+\end{document}
