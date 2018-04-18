@@ -32,6 +32,8 @@ Before pushing your modifications, please sent your *Github Username* to *ZhouFa
   - [Notes for Class 5](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/5/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B005-LYK.pdf) - 李怿铠
   - [Notes for Class 6](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/facf3577daf627b5924a5614a70a8162cd503f4d/Reference%20Notes/6/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B006-LYK.pdf) - 李怿铠
   - [Notes for Class 7](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/7/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B007-LYK.pdf) - 李怿铠
+  - [Notes for Class 8](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/098822dbb3d60f2d64658db17522ddeef1cb98d9/Reference%20Notes/8/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B008-LYK.pdf) - 李怿铠
+  - [Notes for Class 9](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/098822dbb3d60f2d64658db17522ddeef1cb98d9/Reference%20Notes/8/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B008-LYK.pdf) - 李怿铠
 
 - **Research on Questions**
   - Class 1:
