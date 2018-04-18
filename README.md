@@ -19,7 +19,9 @@ Before pushing your modifications, please sent your *Github Username* to *ZhouFa
   - [Lecture Notes for Class 3](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/3/Probability_Theory_Note3-First_Draft.pdf) - 周久钦
   - [Lecture Notes for Class 4](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/4/Probability_Theory_Note4.pdf) - 吴章昊
   - [Lecture Notes for Class 5](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/5/Probability_Theory_Note5.pdf) - 金之涵
-
+  - [Lecture Notes for Class 7](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/6/Note%20of%20Probability%20Lesson%206.pdf) - 段宇轩
+  - [Lecture Notes for Class 7](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/7/Lecture%20Notes%20for%20Probability%20Theory%20-%20Class%207.pdf) - 巫宇威
+  - [Lecture Notes for Class 8](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/8/Lecture%20Notes%20for%20Probability%20Theory%20-%20Class%208.pdf) - 丁尧尧
 - **Reference Notes**
   - [Notes for Class 1](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/1/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B001-LYK.pdf) - 李怿铠
   - [Notes for Class 2](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/2/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B002-LYK.pdf) - 李怿铠
@@ -50,7 +52,9 @@ Before pushing your modifications, please sent your *Github Username* to *ZhouFa
     - [A proof for Weierstrass Approximation Theorem](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/tree/master/Research%20on%20Questions/6/Proof_for_Weierstrass_Approximation_Theorem.pdf) - 肖云轩
     - [Proofs for Chernoff-Hoeffding Theorem](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/tree/master/Research%20on%20Questions/6/Proofs_for_Chernoff-Hoeffding_Theorem.pdf) - 肖云轩  
   - Class 7:
-    [A solution for the homework (need help! It seems that a opposite conclusion has been proved)](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/tree/master/Research%20on%20Questions/7/Solution_for_the_HW.pdf) - 吴章昊
+    [A solution for the homework (need help! It seems that a opposite conclusion has been proved)](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/tree/master/Research%20on%20Questions/7/Solution_for_the_HW.pdf) - 吴章昊 
+  - Class 8:
+    [Some Simple Thoughts](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/8/SomeThoughts_Pascalprimer.pdf) - 金之涵
 
 - **Reference Material**
   - [The Sleeping Beauty Controversy](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Material/The%20Sleeping%20Beauty%20Controversy.pdf)
