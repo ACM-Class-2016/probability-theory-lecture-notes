@@ -86,7 +86,7 @@
 		
 		\proof 显然$(pe^{i\theta}+qe^{-i\theta})^n$的展开式中，$e^{ji\theta}$的系数是$P(X_n=j)$，所以我们只需要算出这个系数即可。又
 		$$
-		\frac{1}{2\pi}\int_{-\pi}^{\pi}e^{ji\theta}d\theta = [j = 1]
+		\frac{1}{2\pi}\int_{-\pi}^{\pi}e^{ji\theta}d\theta = [j = 0]
 		$$
 		我们可以得到：
 		$$
@@ -96,6 +96,10 @@
 		$$
 			P(X_n=j) = \frac{1}{2\pi}\int_{-\pi}^{\pi}(cos\theta)^ne^{-ji\theta}d\theta = \frac{1}{2^{n+1}}[1+(-1)^{n+j}]\binom{n}{\frac{n+j}{2}}
 		$$
+		
+		\remark 这道题还可以用更简单的生成函数解决，即求$(px+qx^{-1})^n$中$x^i$的系数。
+		
+		\remark 还有更更简单的做法，设一共向右走了$a$步，向左走了$b$步，可以根据$a+b=n,a-b=i$算出$a,b$然后直接得出结果。
 		
 		\subsection{例四：丢呀丢呀丢硬币}
 		金榜在丢硬币玩，他丢了$2n$次硬币，每次等概率地正面反面，问最后一个时刻满足到这个时刻为止正面数等于反面数的概率分布。
