@@ -1,11 +1,11 @@
 # probability-theory-lecture-notes
 
-**Lecture notes of Probability Theory** ( Spring Semester of 2018 - Prof. Wu )  
+### Lecture notes of Probability Theory ( Spring Semester of 2018 - Prof. Wu )  
 To make a contribution to this repository, you can:
 - make a fork of the repository, add changes to your fork and then create a pull request
 - or you can contact 范舟 for direct write access
 
-- **Files**
+### Files
 
 | Name | Description |
 | - | - |
@@ -15,7 +15,7 @@ To make a contribution to this repository, you can:
 | Reference Notes | *Some Class Notes for reference.* |
 | Research on Questions | *Thoughts and Solutions provided by students.* |
 
-- **Lecture Notes Finished**
+### Lecture Notes Finished
   - [Lecture Notes for Class 1](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/1/Lecture%20Notes%20for%20Probability%20Theory%20-%20Class%201.pdf) - 李怿铠
   - [Lecture Notes for Class 2](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/2/Probability_Theory_Note2.pdf) - 肖云轩
   - [Lecture Notes for Class 3](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/3/Probability_Theory_Note3-First_Draft.pdf) - 周久钦
@@ -25,7 +25,7 @@ To make a contribution to this repository, you can:
   - [Lecture Notes for Class 7](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/7/Lecture%20Notes%20for%20Probability%20Theory%20-%20Class%207.pdf) - 巫宇威
   - [Lecture Notes for Class 8](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/8/Lecture%20Notes%20for%20Probability%20Theory%20-%20Class%208.pdf) - 丁尧尧
   - [Lecture Notes for Class 9](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/9/9.pdf) - 郝琰
-- **Reference Notes**
+### **Reference Notes**
   - [Notes for Class 1](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/1/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B001-LYK.pdf) - 李怿铠
   - [Notes for Class 2](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/2/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B002-LYK.pdf) - 李怿铠
   - [Notes for Class 2 (Correct the solution for Hat Puzzle)](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/2/Elementary%20Probability-%E5%90%B4%E7%AB%A0%E6%98%8A.pdf) - 吴章昊
@@ -39,7 +39,7 @@ To make a contribution to this repository, you can:
   - [Notes for Class 10](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/10/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B010-LYK.pdf) - 李怿铠
   - [Notes for Class 12](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/ac75d73a3dc9ea3c7ff03bcb34fc0a1fbc06da98/Reference%20Notes/12/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B012-LYK.pdf) - 李怿铠
 
-- **Research on Questions**
+### Research on Questions
   - Class 1:
     - [Solution](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/1/Solution_%E7%8E%8B%E5%A4%A9%E5%93%B2.pdf) - 王天哲
     - [解答与想法](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/1/%E8%A7%A3%E7%AD%94%E4%B8%8E%E6%83%B3%E6%B3%95-%E5%90%B4%E7%AB%A0%E6%98%8A.pdf) - 吴章昊
@@ -63,5 +63,5 @@ To make a contribution to this repository, you can:
   - Class 8:
     [Some Simple Thoughts](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/8/SomeThoughts_Pascalprimer.pdf) - 金之涵
 
-- **Reference Material**
+### Reference Material
   - [The Sleeping Beauty Controversy](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Material/The%20Sleeping%20Beauty%20Controversy.pdf)
