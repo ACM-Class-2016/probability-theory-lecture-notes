@@ -1,7 +1,9 @@
 # probability-theory-lecture-notes
 
 **Lecture notes of Probability Theory** ( Spring Semester of 2018 - Prof. Wu )  
-Before pushing your modifications, please sent your *Github Username* to *ZhouFan* first.
+To make a contribution to this repository, you can:
+- make a fork of the repository, add changes to your fork and then create a pull request
+- or you can contact 范舟 for direct write access
 
 - **Files**
 
