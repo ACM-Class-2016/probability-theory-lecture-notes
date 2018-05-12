@@ -25,7 +25,7 @@ To make a contribution to this repository, you can:
   - [Lecture Notes for Class 7](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/7/Lecture%20Notes%20for%20Probability%20Theory%20-%20Class%207.pdf) - 巫宇威
   - [Lecture Notes for Class 8](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/8/Lecture%20Notes%20for%20Probability%20Theory%20-%20Class%208.pdf) - 丁尧尧
   - [Lecture Notes for Class 9](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/9/9.pdf) - 郝琰
-  - [Lecture Notes for Class 10](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/10/Lecture%20Notes%20of%20Probability%20Theory%20-%20Lesson%2010.pdf) - 范舟
+  - [Lecture Notes for Class 10](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/10/Lecture%20Notes%20of%20Probability%20Theory%20-%20Lesson%2010.pdf) - 范舟  
   - [Lecture Notes for Class 12](https://github.com/TianBoyu/probability-theory-lecture-notes/blob/master/Lecture%20Notes/12/Lecture%20Notes%20of%20Probability%20Theory%20-%20Lesson%2012.pdf) - 田博宇
 ### **Reference Notes**
   - [Notes for Class 1](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/1/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B001-LYK.pdf) - 李怿铠
