@@ -36,7 +36,7 @@ That is, the **Conditional Expected Value** of next observation, given all the p
 
   A very important of the above gambl of **doubling strategy**.
 
-* (**Abraham de Moivre or de Moivre's martingale**)  Now suppose the coin is unfair, i.e., biased, with probability **p** of  coming up heads and probability **q**&nbsp;=&nbsp;1&nbsp;−**&nbsp;p** of tails.  Let
+* (**Abraham de Moivre or de Moivre's martingale**)  Now suppose the coin is unfair, i.e., biased, with probability **p** of  coming up heads and probability $q$&nbsp;=&nbsp;1&nbsp;−&nbsp;$p$ of tails.  Let
 
   ​	$X_{n+1}=X_n\pm 1$
 
@@ -44,7 +44,7 @@ That is, the **Conditional Expected Value** of next observation, given all the p
 
   ​	$Y_n=(q/p)^{X_n}.$
 
-  Then { **$Y_n$** : **n** = 1, 2, 3, ... } is a martingale with respect to { **$X_ n$: n** = 1, 2, 3, ... }. To show this
+  Then { **$Y_n$** : $n$ = 1, 2, 3, ... } is a martingale with respect to { **$X_ n$: $n$** = 1, 2, 3, ... }. To show this
 
   ​	$E[Y_{n+1} \mid X_1,\dots,X_n]  = p (q/p)^{X_n+1} + q (q/p)^{X_n-1} \\[6pt]$
 
@@ -55,7 +55,7 @@ That is, the **Conditional Expected Value** of next observation, given all the p
 
 ### Stopping Times###
 
-A stopping time with respect to a sequence of random variables X_1​,X_2​,X_3​,... is a random variable τ with the property that for each t, the occurrence or non-occurrence of the event τ = t depends only on the values of X_1​,X_2​,X_3​,…,X_t​. The intuition behind the definition is that at any particular time t, you can look at the sequence so far and tell if it is time to stop.  
+A stopping time with respect to a sequence of random variables $X_1,X_2,X_3,…$ is a random variable $τ$ with the property that for each $t$, the occurrence or non-occurrence of the event $τ = t$ depends only on the values of $X_1,X_2,X_3,…,X_t$. The intuition behind the definition is that at any particular time $t$, you can look at the sequence so far and tell if it is time to stop.  
 
 An example in real life might be the time at which a gambler leaves the gambling table, which might be a function of his previous winnings (for example, he might leave only when he goes broke), but he can't choose to go or stay based on the outcome of games that haven't been played yet.
 
@@ -73,13 +73,13 @@ If you feel buried by the formula in this part you can choose skip it and only f
 
 A discrete-version theorem goes below:
 
-Let $X = (X_t)_{t∈ℕ_0}$be a discrete-time **Martingale** and **τ** with values in $ℕ_0 ∪ \{∞\}$, both with respect to a **Filtration** $({\mathcal F}_t)_{t∈ℕ_0}$. Assume that one of the following three conditions holds:
+Let $X = (X_t)_{t∈ℕ_0}$be a discrete-time **Martingale** and $τ$ with values in $ℕ_0 ∪ \{∞\}$, both with respect to a **Filtration** $({\mathcal F}_t)_{t∈ℕ_0}$. Assume that one of the following three conditions holds:
 
- 	(**a**) The stopping time **τ** is **almost surely** bounded, i.e., there exists a **constant** **c ∈ ℕ** such that **τ ≤ c** a.s.
+ 	(**a**) The stopping time $τ$ is **almost surely** bounded, i.e., there exists a **constant** **c ∈ ℕ** such that $τ ≤ c$ a.s.
 
-​	(**b**) The stopping time **τ** has finite expectation and the conditional expectations of the absolute value of the martingale increments  are almost surely bounded, more precisely, $\mathbb{E}[\tau]<\infty$ and there exists a constant **c** such that $\mathbb{E}\bigl[|X_{t+1}-X_t|\,\big\vert\,{\mathcal F}_t\bigr]\le c$ almost surely on the event **τ > t** for **$t ∈ ℕ_0$**.
+​	(**b**) The stopping time $τ$ has finite expectation and the conditional expectations of the absolute value of the martingale increments  are almost surely bounded, more precisely, $\mathbb{E}[\tau]<\infty$ and there exists a constant $c$ such that $\mathbb{E}\bigl[|X_{t+1}-X_t|\,\big\vert\,{\mathcal F}_t\bigr]\le c$ almost surely on the event $τ > t$ for **$t ∈ ℕ_0$**.
 
-​	(**c**) There exists a constant **c** such that $\vert X_{t∧τ}\vert ≤ c$ a.s. for all $t ∈ ℕ_0$ where ∧ denotes the **minimum operator**.
+​	(**c**) There exists a constant $c$ such that $\vert X_{t∧τ}\vert ≤ c$ a.s. for all $t ∈ ℕ_0$ where ∧ denotes the **minimum operator**.
 
 **Conclusion ** Then $X_τ$ is an almost surely well defined random variable and $\mathbb{E}[X_{\tau}]=\mathbb{E}[X_0].$
 
@@ -105,7 +105,7 @@ gives $\vert X_t^τ \vert ≤ M$ for all $t ∈ ℕ_0$, where
 
 By the Property of the expection
 
-​	$\mathbb{E}[M]=\mathbb{E}[|X_0|]+\sum_{s=0}^\infty \mathbb{E}\bigl[|X_{s+1}-X_s|\cdot\mathbf{1}_{\{\tau>s\}}\bigr]$.
+​	$\mathbb{E}[M]=\mathbb{E}[|X_0|]+\sum_{s=0}^\infty \mathbb{E}\bigl[|X_{s+1}-X_s|\cdot\mathbf{1}_{\{\tau>s\}}\bigr]​$.
 
 Notice that given that condition (**a**) holds this series only contain finite **1**, hence $M$ is well-defined or integrable.
 
