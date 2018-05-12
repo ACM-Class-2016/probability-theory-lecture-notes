@@ -64,8 +64,8 @@ To make a contribution to this repository, you can:
   - Class 8:
     [Some Simple Thoughts](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/8/SomeThoughts_Pascalprimer.pdf) - 金之涵
   - Class 12:
-    [Some Solutions](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/87876d4b50c65c4f277a40c85ce8e75bcb18c4e0/Research%20on%20Questions/12/SomeSolutions.pdf) - 徐逸凡
-    [Ergodicity定理的表述和证明](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/12/%E9%97%AE%E9%A2%98%E8%A7%A3%E7%AD%94.pdf) - 田博宇
+    - [Some Solutions](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/87876d4b50c65c4f277a40c85ce8e75bcb18c4e0/Research%20on%20Questions/12/SomeSolutions.pdf) - 徐逸凡
+    - [Ergodicity定理的表述和证明](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/12/%E9%97%AE%E9%A2%98%E8%A7%A3%E7%AD%94.pdf) - 田博宇
 
 ### Reference Material
   - [The Sleeping Beauty Controversy](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Material/The%20Sleeping%20Beauty%20Controversy.pdf)
