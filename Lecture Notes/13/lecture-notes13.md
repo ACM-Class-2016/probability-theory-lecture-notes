@@ -18,7 +18,7 @@ In **probability theory**, a **martingale** is a sequence of **random variable**
 
 ### Defenition###
 
-A narrow and basic definition of Martingale is a **Discrete-time Process** , in other words, a sequence of of **Random Variables** that satisfies for any time **n**
+A narrow and basic definition of **Martingale** is a **Discrete-time Stochastic Process** , in other words, a sequence of of **Random Variables** that satisfies for any time **n**
 
 ​	$$\mathbf{E} ( \vert X_n \vert )< \infty $$
 
@@ -30,11 +30,11 @@ That is, the **Conditional Expected Value** of next observation, given all the p
 
 ### Examples###
 
-* An unbiased **random walk** (in any number of dimensions) is an example of a martingale.
+* An unbiased **random walk** on the integer points (in any number of dimensions, i.e., no matter in a line or in a plane or in a hyperplane) is an example of a martingale.
 
 * A gambler's fortune is a martingale if all the betting games which the gambler plays are fair. To be more specific: suppose $X_n$ is a gambler's fortune after **n** tosses of a **fair coin**, where the gambler wins $\$1$ if the coin comes up heads and loses $\$1$ if it's tails.  The gambler's conditional expected fortune after the next trial, given the history, is equal to his present fortune. This sequence is thus a martingale.
 
-  A very important of the above gambl of **doubling strategy**.
+  A very important of the above gambling is **doubling strategy**.
 
 * (**Abraham de Moivre or de Moivre's martingale**)  Now suppose the coin is unfair, i.e., biased, with probability **p** of  coming up heads and probability $q$&nbsp;=&nbsp;1&nbsp;−&nbsp;$p$ of tails.  Let
 
@@ -59,7 +59,9 @@ A stopping time with respect to a sequence of random variables $X_1,X_2,X_3,…$
 
 An example in real life might be the time at which a gambler leaves the gambling table, which might be a function of his previous winnings (for example, he might leave only when he goes broke), but he can't choose to go or stay based on the outcome of games that haven't been played yet.
 
+####Exact Definition
 
+A random variable $\tau$ : Ω → $I$ is called a **stopping time** if $\{ \omega \in \Omega: \tau (\omega) \leq t \} \in \mathcal{F}_{t}$ for all $t$ in $I$.
 
 ### Optional Stopping Theorem###
 
@@ -67,7 +69,7 @@ An example in real life might be the time at which a gambler leaves the gambling
 
 According to the limited pages, we can only roughly talk about this beautiful theorem epescially the concept **Filtration**, which is an essential part of the theorem.
 
-If you feel buried by the formula in this part you can choose skip it and only focus on our **conclusion** because the proof is somehow far-fetched from our topic.	    
+If you feel buried by the formula in this part you can choose skip it and only focus on our **Conclusion** because the proof is somehow far-fetched from our topic.	    
 
 ####Definition
 
@@ -105,7 +107,7 @@ gives $\vert X_t^τ \vert ≤ M$ for all $t ∈ ℕ_0$, where
 
 By the Property of the expection
 
-​	$\mathbb{E}[M]=\mathbb{E}[|X_0|]+\sum_{s=0}^\infty \mathbb{E}\bigl[|X_{s+1}-X_s|\cdot\mathbf{1}_{\{\tau>s\}}\bigr]​$.
+​	$\mathbb{E}[M]=\mathbb{E}[|X_0|]+\sum_{s=0}^\infty \mathbb{E}\bigl[|X_{s+1}-X_s|\cdot\mathbf{1}_{\{\tau>s\}}\bigr]$.
 
 Notice that given that condition (**a**) holds this series only contain finite **1**, hence $M$ is well-defined or integrable.
 
@@ -143,15 +145,15 @@ The probability the gambler does not lose all $n$ bets is $1 − q_n$. In all ot
 
 Thus we can assume the $q$ of an even coin is $\frac{1}{2}$, leading to the profit to be 0.
 
-##### conclusion
+##### Conclusion
 
-Actually, there is an interesting fact that  in each single round, the gambler use such strategy can merely earn \$1, which also showes that the average loss is \$1 as well ! If we stand in the point of expectation, it is like a random work in one dimension(not so serious and correct).
+Actually, there is an interesting fact that  in each single round, the gambler use such strategy can merely earn \$1, which also showes that the average loss is \$1 as well !  If we replace the observation value with the expected value, it is like a random work in one dimension(although not so serious and correct, just an ideal).
 
 But through the conclusion of **Optional Stopping Theorem**, we can bring out the result that the gambler's fortune over time is a martingale, and the time $τ$ at which he decides to quit is a stopping time, and the theorem reveals that $E[X_τ]$ = $E[X_0]$.  In other words, the gambler leaves with the same amount of money on average as when he started.
 
-If we consider the situation that the gambler possesses $n$ dollars and banker possesses $m$ dollars, we can discovery the $X_τ$ only can end in two possible value $0$  and $n + m$ , so we can resolve the possibility of the gambler's win is $\frac{n}{n + m}$, indicating that it grows linearly as the possession grows.
+If we consider the situation that the gambler possesses $n$ dollars and banker possesses $m$ dollars, and the game will end immediately when anyone of these two man has no money. We can discovery that $X_τ$ only can end in two possible value $0$  and $n + m$ , so we can resolve the possibility of the gambler's win is $\frac{n}{n + m}$, indicating that it grows linearly as the possession grows.
 
-### Review on the first section
+### Acknowledgement
 
 I intend to dedicate the first section to *Guo XiaoXu*, one of my most respectful senior students in our college. It is he who inspired me and gived me countless tutor in this problem. I'm also fairly glad to share the genious solution with others.
 
@@ -171,7 +173,7 @@ To give a specific case, we assume the the pattern to be HH, which means to two 
 
 ### Solution A
 
-In this subsection, we will show a method utilizing generative function.
+In this subsection, we will show a method utilizing generating function.
 
 Let $f_k$ denote the number of patterns that we put $k$ coins in a line without two consecutive heads. We can get the following recursive formula
 
@@ -185,17 +187,17 @@ Actually $f_k = F_{k + 2}$. Meanwhile , the last three toss must be **THH**, so 
 
 ​	$\sum_{k = 1}^{\infty}{k * \begin{multline}\frac{F_{k - 1}}{2^k}\end{multline}}$(*)
 
-We can use generative function to resolve this, let $g(x)$ be the generative function of $F_x$. So
+We can use generating function to resolve this, let $g(x)$ be the generating function of $F_x$. So
 
 ​	$g(x) + xg(x) = \begin{multline}\frac{g(x)}{x} - 1\end{multline}$
 
 ​	$g(x) = \begin{multline}\frac{x}{1 - x - x^2}\end{multline}$  
 
-Using some algebra tricks, we define $G(x) = g(x/2)*(x/2)$, we can gain the generative function of (*),
+Using some algebra tricks, we define $G(x) = g(x/2)*(x/2)$, we can gain the generating function of (*),
 
 ​	$G(x) = \begin{multline}\frac{x^2}{4 - 2x - x^2}\end{multline}$
 
-Deviarative the $G(x)$ and multiply with $x$ we arrive in our destination
+Derivate the $G(x)$ and multiply by $x$ we arrive in our destination
 
 ​	$xG'(x) = 2 * \frac{x^2}{4} + 3 * \frac{x^3}{8} + 4 * \frac{2x^4}{16}...$
 
@@ -205,21 +207,21 @@ Let $x = 1$ we can get the answer $6$.
 
 ### Solution B
 
-In this subsection, we will introduce a wonderful solution that lays on the basis of **Martingale**.
+In this subsection, we will introduce a wonderful solution that lays on the basis of **Martingale**. We will solve a genaralized version of the problem that **what is the expected toss of getting n consecutive head sides**?
 
-Supposing that we are doing gambling in a casino, which is merely repeated tossing coins. If you bet $x$ Dollars and win, you get $2x$ dollars back, otherwise you lose it.
+Suppose that we are doing gambling in a casino, which is merely repeated tossing coins and the you guess the result. If you bet $x$ dollars and win, you get $2x$ dollars back, otherwise you lose it.
 
-And the strategy of the gamblers is very simple, they keep on betting on the head side with all their fortune.  At the beginning of each toss, there will be a gambler entering the casino and he won't leave until he bankrupt.
+And the strategy of the gamblers is very simple, they keep on betting on the head side with all their fortune. , so they double their fortune or lose all their money after each round of toss. Addtionally, at the beginning of each toss, there will be a gambler entering the casino and he won't leave until he bankrupt.
 
 Unfortunately, the banker of the casino is very sensitive and he will close the casino if there is one man have win for exactly n times, which means there is n consecutive **head**s finally.
 
-So when such patterns appears, there must be $n$ gamblers in the casino and there total money is $2^n - 2$ (summarize from $2$ to $2^{n-1}$). Addtionally this is a **martingale** and the expected profit is zero, that means the average loss of the banker is exactly zero! Hence, there is expected to be $2^n - 2$ gamblers entering the casino, which means the game last $2^n - 2$ rounds! Amazing!
+So when the casino is finally closed, i.e., such patterns appears, there must be $n$ gamblers in the casino and there total money is $2^n - 2$ (summarize from $2$ to $2^{n-1}$ because the last man own \$2, the one by last own \$4). Addtionally this is a **martingale** and the expected profit is zero, that means the average loss of the banker is exactly zero! Hence, there is expected to be $2^n - 2$ gamblers entering the casino, which means the game last $2^n - 2$ rounds! Amazing!
 
 #### Remark 
 
 ***Such method can apply to any patterns, only modifying the strategy of the gamblers.***
 
-### Review on Section B
+### Acknowledgement
 
 I highly recommend the book written by *Matrix67* who is absolutely intelligent in math. These two solutions both origin from its contents. I also want to thanks for the discussion with *Li WenHao* and *Jin ZhiHan* who lend me a hand in such topic.
 
@@ -359,9 +361,9 @@ Let $p \to 0$
 
 ​	$P(x = k) = e^{-\lambda}\frac{\lambda^k}{k!}$
 
-#### The composition and synthesis of Poisson random variable
+#### The composition of Poisson random variable
 
-Let $A$ and $B$  denote disjoint event space, $X$ and $Y$ respectively indicate the number of $A$ and $B$
+Let $A$ and $B$  denote disjoint event space of a single expriment, likewise an experiment whose result can be $A$ or $B$ or some kind of stuff, and each result of such expriment is independent, let $X$ and $Y$ respectively indicate the number of $A$ and $B$
 
 Assuming that $X + Y \sim Poisson(\lambda)$, we can prove that $X \sim Poisson(p \lambda)$ and $Y \sim Poisson((1 - p)\lambda)$
 
@@ -375,6 +377,6 @@ Take Summation for both $X$ and $Y$, we can get
 
 ​	$\begin{multline} P(Y = m) = \frac{e^{-\lambda(1-p)}(\lambda(1- p))^{m}}{m!}\end{multline}$
 
-### Review on the Section C
+### Review
 
 In section C we concentrate on various distribution. But what we should keep in mind is that all the above distributions are similar if we take specific case to observe, thus lead to many similar and interesting properties. I want to thanks for the efforts of our professor *Wu YaoKun* who bring this alive to us.
