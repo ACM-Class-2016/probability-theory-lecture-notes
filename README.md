@@ -75,6 +75,8 @@ To make a contribution to this repository, you can:
     - [A solution for the homework (need help! It seems that a opposite conclusion has been proved)](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/tree/master/Research%20on%20Questions/7/Solution_for_the_HW.pdf) - 吴章昊 
   - Class 8:
     - [Some Simple Thoughts](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/8/SomeThoughts_Pascalprimer.pdf) - 金之涵
+  - Class 11:
+    - [A different solution for phone broken](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/11/A%20different%20solution%20for%20the%20phone%20broken%20problem.pdf) - 吴章昊
   - Class 12:
     - [Some Solutions](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/87876d4b50c65c4f277a40c85ce8e75bcb18c4e0/Research%20on%20Questions/12/SomeSolutions.pdf) - 徐逸凡
     - [Ergodicity定理的表述和证明](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/12/%E9%97%AE%E9%A2%98%E8%A7%A3%E7%AD%94.pdf) - 田博宇
