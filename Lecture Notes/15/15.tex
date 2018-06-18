@@ -1,0 +1,372 @@
+\documentclass{article}
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+
+\usepackage{graphicx}
+\usepackage{subfigure}
+
+\usepackage{listings}
+\usepackage{CJK}
+
+
+
+\usetikzlibrary{automata,positioning}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{\hmwkClass\ (\hmwkClassInstructor\ \hmwkClassTime): \hmwkTitle}
+\rhead{}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+
+%
+% Create Problem Sections
+%
+
+\newcommand{\enterProblemHeader}[1]{
+    \nobreak\extramarks{}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+    \nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+}
+
+\newcommand{\exitProblemHeader}[1]{
+    \nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+    \stepcounter{#1}
+    \nobreak\extramarks{Problem \arabic{#1}}{}\nobreak{}
+}
+
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+\newcounter{homeworkProblemCounter}
+\setcounter{homeworkProblemCounter}{1}
+\nobreak\extramarks{Problem \arabic{homeworkProblemCounter}}{}\nobreak{}
+
+\newenvironment{homeworkProblem}{
+    \section{Problem \arabic{homeworkProblemCounter}}
+    \setcounter{partCounter}{1}
+    \enterProblemHeader{homeworkProblemCounter}
+}{
+    \exitProblemHeader{homeworkProblemCounter}
+}
+
+%
+% Homework Details
+%   - Title
+%   - Due date
+%   - Class
+%   - Section/Time
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{Lecture note}
+\newcommand{\hmwkDueDate}{May 15, 2018}
+\newcommand{\hmwkClass}{Probability Theory}
+\newcommand{\hmwkClassTime}{Class 15}
+\newcommand{\hmwkClassInstructor}{}
+\newcommand{\hmwkAuthorName}{Jingxiao Chen}
+
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+    \normalsize\vspace{0.1in}\small{\hmwkDueDate\ }\\
+    \vspace{0.1in}\large{\textit{\hmwkClassInstructor\ \hmwkClassTime}}
+    \vspace{3in}
+}
+
+\author{\textbf{\hmwkAuthorName} \\
+ }
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+%
+% Various Helper Commands
+%
+
+% Useful for algorithms
+\newcommand{\alg}[1]{\textsc{\bfseries \footnotesize #1}}
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+
+
+\begin{document}
+
+\begin{CJK*}{UTF8}{gbsn}
+\maketitle
+
+\pagebreak
+\section{1.母函数(Generating function) }
+\textbf{定义}
+
+对于数列$a_n$及其母函数$g(z)$
+$$(a_n)^{\infty}_{n=0} \to g(z) = \sum^{\infty}_{n=0}a_n z^n$$
+
+利用g(z)求E(x), Var(x)
+$$E(x) = \sum n a_n = g'(1)$$
+$$E(x^2) - E(x) = g''(1)$$
+$$Var(x) = g''(1)+g'(1)-[g'(1)]^2$$
+从E(x), Var(x)求g(z)
+$$a_j = \frac{1}{j!}g^{(j)}(0)$$
+
+由唯一性定理得左右两边两两对应，这条性质非常重要，我们可以同过g的性质得到E，Var的性质
+
+\textbf{例1}
+	$$\sum^{\infty}_{i=1}a_j z_i = \sum^{\infty}_{i=1}b_i z_i <=> a_i = b_i$$
+\textbf{思考题}如何证明上式的正确性
+
+\textbf{定义}
+卷积
+$$c_i = \sum^l_{j=0} a_j b_{j-1}$$
+
+\textbf{性质}
+对于随机变量a,b,c
+若a,b独立同分布，且有$g_a(z)g_b(z) = g_c(z)$
+则$c=a+b$
+
+\textbf{例2}
+
+$P(T=j) = p_j = q^{j-1}p \quad j\geq 1$几何分布
+$$
+g(z) = \sum^{\infty}_{j=1}p_j z_j = \frac{p}{q}\sum^{\infty}_{j=1}(q\cdot z)^j
+ = (\frac{p z}{1-q z})^n
+$$
+
+\textbf{例3: 负二项分布（抛硬币问题）}
+
+\textbf{描述}
+假设有一组独立的伯努利数列，每次实验有两种结果“成功”和“失败”。每次实验的成功概率是p，失败的概率是1－p。我们得到一组数列，当预定的“非成功”次数达到r次，那么结果为“成功”的随机次数会服从负二项分布
+\[
+S_n = \sum_{i=1}^n T_i
+\]
+
+其母函数
+\[
+\begin{split}
+g_{S_n}(z) 
+	& = (g_T(z))^n \\
+	& = (\frac{pz}{1-qz})^n \\
+	& = \sum^{\infty}_{j=0} \binom{n+j-1}{n-1} \cdots \\
+	& = \sum^{\infty}_{k=n} \binom{k-1}{n-1} p^n q^(k-n) z^k \\
+\end{split}
+\]
+由$(\frac{g(z)}{z}^n) = (\frac{p}{1-qz})^n$有
+\[
+P(s_n=h+j) = \binom{n+j-1}{j}p^n q^j= \binom{-n}{j}p^n(-q)^j
+\]
+
+此外，我们利用$g_X(z) = E(z^X)$可以得到很多东西
+例如，若x1,x2独立，
+\[
+E(z^{x1+x2}) = E(z^{x1})E(z^{x2})
+\]
+
+\section{2.拉普拉斯变换(Laplace transform)\quad $L_x(\lambda)$}
+\textbf{定义}拉普拉斯变换
+对于随机变量X，参数$\lambda \in [0,\infty]$，有函数$L_x(\lambda)$
+\[
+\text{连续：}
+L_x(\lambda) = E(e^{-\lambda x})
+	= \int^{\infty}_{-\infty}e^{-\lambda u} f(u)du \\
+\]
+
+\[
+\text{离散：}
+L_x(\lambda) = E(e^{-\lambda x}) 
+	= \sum^{\infty}_{j=0} a_j e^{j\lambda} 
+	\text{（可能不存在）}
+\]
+
+若x1,x2独立：
+
+\[
+E(e^{-\lambda(x1+x2)}) 
+	= E(e^{-\lambda x1})E(e^{-\lambda x2})
+\]
+
+\section{3.矩母函数(moment generating function)\quad $M_x(t)$}
+\textbf{定义}矩母函数
+对于随机变量X，参数t,有函数$M_x(t)$
+\[
+\begin{split}
+M_x(t) 
+	&= E(e^{t x}) \\
+	&= E(1+tx+\frac{t^2 x^2}{2!}+\cdots) \\
+	&= 1+ E(x)t + \frac{E(x^2)}{2!}t^2 + \cdots\\
+\end{split}
+\]
+本质上讲，矩母函数即是矩的母函数
+
+若x1,x2独立：
+
+\[
+M_{x_1}(t)M_{x_2}(t) = M_{x_1+x_2}(t)
+\]
+
+\section{4.特征函数(characteristic function) $\varphi_x(\theta)$}
+\textbf{定义}特征函数
+对于随机变量x
+\[
+\varphi_x(\theta) = E(e^{i\theta x})
+\]
+我们可以另$t=i\theta$从而与矩母函数进行类比。
+
+由于涉及到傅里叶变换相关知识，在这里不再进行更多的介绍。
+
+\section{5.常见分布}
+\textbf{几种常见分布的矩母函数和特征函数}
+
+\begin{tabular}{ccc}
+\quad & $M_x(t)$ & $\varphi(t)$ \\
+Bernoulli &  $1-p+pe^t$ & $1-p+pe^{it}$\\
+Geomatic & $\frac{pe^t}{1-(1-p)e^t}$ & $\frac{pe^{it}}{1-(1-p)e^{it}}$ \\
+$Poisson(\lambda)$ & $e^{\lambda (e^t-1)}\ (t<\lambda)$ & $e^{\lambda (e^{it}-1)}$   \\
+Normal $N(\mu, s^2)$ & $e^{t\mu + \frac{1}{2}\sigma^2t^2}$ & $e^{it\mu - \frac{1}{2}\sigma^2t^2}$ \\
+\end{tabular}
+
+\textbf{正态分布n阶矩}
+若$X\sim N(0,1)$
+\[
+M_x(\theta) = \int^{\infty}_{\infty} e^{\theta x}\varphi (x) dx
+\]
+\[
+\begin{split}
+\varphi (x) 
+	&= \frac{e^{-\frac{\lambda ^2}{2}}}{\sqrt{2 \pi}} \\
+	&= \frac{1}{\sqrt{2 \pi}} \int^{\infty}_{\infty} exp(\theta x - \frac{x^2}{2}) dx \\
+	&= e^{\frac{\theta ^2}{2}} \int^{\infty}_{-\infty} \varphi(x-\theta)dx \\
+	&= e^{\frac{\theta ^2}{2}} \\
+\end{split}
+\]
+我们可以得到
+\[
+	1
+	+\frac{\theta ^2}{2} 
+	+\frac{1}{2!}(\frac{\theta ^2}{2})^2
+	+\cdots
+	 = 
+	\sum^{\infty}_{n=0}\frac{\theta ^n}{n!}E(X^n)
+\]
+从中取一项$\frac{1}{n!2^n} = \frac{E(X^{2n})}{2n!}$,明显有
+\[
+\begin{cases}
+	E(X^{2n+1}) = 0\\
+	E(X^{2n}) = \frac{(2n)!}{n!2^n}
+\end{cases}
+\]
+\textbf{性质}
+对于两个独立的随机变量X1,X2
+\begin{align*}
+	X_1 \sim N(\mu_1, \sigma_1^2) &\\
+	X_2 \sim N(\mu_2, \sigma_2^2)
+\end{align*}
+\[
+ \Rightarrow X_1+X_2\sim N(\mu_1 + \mu_2, \sigma_1^2 + \sigma_2^2)
+\]
+\textbf{证明}
+\[
+\begin{split}
+M_{x1+x2}(\theta) 
+	&= M_{x1}(\theta) M_{x2}(\theta) \\
+	&= e^{\mu_1\theta +\frac{\sigma_1^2}{2}\theta^2} e^{\mu_2\theta +\frac{\sigma_2^2}{2}\theta^2}\\
+	&= e^{(\mu_1 + \mu_2)\theta +\frac{\sigma_1^2 + \sigma_2^2}{2}\theta^2}\\
+	&=^{\text{暂记}} M_x(\theta)
+\end{split}
+\]
+由唯一性定理可知$M_{x1+x2}(\theta) = M_x(\theta)$唯一
+
+\section{6.中心极限定理(Central Limit Theorem)}
+\textbf{描述}
+对于随机变量$X_i \sim X$, $E(X) = \mu$, $Var(X) = \sigma^2$
+
+记$$Z_n = \frac{X_1+\cdots+X_n-n\mu}{\sqrt{n} \sigma}$$
+
+下式成立$$\lim_{n\to \infty} P(a\leq Z_n \leq b) = F(b) - F(a) = \int^{b}_{\infty} \frac{e^{-\frac{\theta^2}{2}} }{\sqrt{2n}}dx$$
+
+\textbf{证明}
+对于特征函数$\varphi_{x-\mu}(\theta) = \varphi(\theta)$
+则
+\[
+\begin{split}
+\varphi_{Z_n} 
+	&= \prod^n_{j=1} \varphi(\frac{\theta}{\sigma \sqrt{n}}) \\
+	&= (\varphi(\frac{\theta}{\sigma \sqrt{n}}))^n \\
+\end{split}
+\]
+
+\textbf{定理} Levy's Continuity Theorem
+\[
+\varphi'(\theta) = iE((x-\mu)e^{i\theta(x-\mu)})
+\]
+\[
+\varphi''(\theta) = -E((x-\mu)^2-e^{i\theta(x-\mu)})
+\]
+由上面两式子在0处泰勒展开
+\[
+\varphi(\theta) = 1+0-\frac{\sigma^2 \theta^2}{2} + \theta^2 h(\theta)
+\]
+\[
+(\varphi'(0) = 0, \quad \varphi''(0)=-\sigma^2)
+\]
+注意到当$\theta \to 0$有$h(\theta)\to 0$
+\[
+\begin{split}
+\varphi_{Z_n}(\theta) 
+	&= \prod^m_{j=1}\varphi(\frac{\theta}{\sigma \sqrt{n}}) \\
+	&= (\varphi(\frac{\theta}{\sigma \sqrt{n}}))^n \\
+	&= e^{n\log(1-\frac{\theta^2}{2n} +\frac{\theta^2}{n\sigma^2}h(\frac{\theta}{\sigma \sqrt{n}}))}
+\end{split}
+\]
+又由洛必达法则可以得到
+\[
+\lim_{n\to \infty}\varphi_{Z_n}(\theta) = e^{-\frac{\theta^2}{2}}
+\]
+由唯一性定理可得，此时趋向于一个分布
+\end{CJK*}
+\end{document}

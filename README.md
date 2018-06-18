@@ -1,6 +1,6 @@
 # probability-theory-lecture-notes
 
-### Lecture notes of Probability Theory ( Spring Semester of 2018 - Prof. Wu )  
+### Lecture notes of Probability Theory ( Spring Semester of 2018 - Prof. Wu )
 To make a contribution to this repository, you can:
 - make a fork of the repository, add changes to your fork and then create a pull request
 - or you can contact 范舟 for direct write access
@@ -30,6 +30,7 @@ To make a contribution to this repository, you can:
   - [Lecture Notes for Class 12](https://github.com/TianBoyu/probability-theory-lecture-notes/blob/master/Lecture%20Notes/12/Lecture%20Notes%20of%20Probability%20Theory%20-%20Lesson%2012.pdf) - 田博宇
   - [Lecture Notes for Class 13](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/13/lecture-notes13.pdf) - 范裕达
   - [Lecture Notes for Class 14](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/14/14.pdf) - 谢雨桐
+  - [Lecture Notes for Class 15](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/15/15.pdf) - 陈竞潇
   - [Lecture Notes for Class 16](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/16/16.pdf) - 李江贝
 ### **Reference Notes**
   - [Notes for Class 1](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/1/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B001-LYK.pdf) - 李怿铠
@@ -57,7 +58,7 @@ To make a contribution to this repository, you can:
   - Class 3:
     - [Solution](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/3/Solution_%E7%8E%8B%E5%A4%A9%E5%93%B2.pdf) - 王天哲
     - [Some Thoughts and Solutions](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/3/Thoughts_%E9%87%91%E4%B9%8B%E6%B6%B5.pdf) - 金之涵
-    - [A thought to P(AB!=C|ABr=Cr)](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/3/Thoughts_%E4%B8%81%E5%B0%A7%E5%B0%A7.pdf) - 丁尧尧 
+    - [A thought to P(AB!=C|ABr=Cr)](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/3/Thoughts_%E4%B8%81%E5%B0%A7%E5%B0%A7.pdf) - 丁尧尧
     - [Thoughts](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/3/Thoughts_%E5%90%B4%E7%AB%A0%E6%98%8A.pdf) - 吴章昊
     - [对猎犬问题的补充](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/3/thoughts_Xu.pdf) - 徐子昊
     - [日出问题](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/1/Sunrise_problem.pdf) - 林耘丰
@@ -66,9 +67,9 @@ To make a contribution to this repository, you can:
     - [Solutions](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/4/Thoughts_%E6%9D%8E%E6%B2%90%E9%98%B3.pdf) - 李沐阳
   - Class 6:
     - [A proof for Weierstrass Approximation Theorem](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/tree/master/Research%20on%20Questions/6/Proof_for_Weierstrass_Approximation_Theorem.pdf) - 肖云轩
-    - [Proofs for Chernoff-Hoeffding Theorem](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/tree/master/Research%20on%20Questions/6/Proofs_for_Chernoff-Hoeffding_Theorem.pdf) - 肖云轩  
+    - [Proofs for Chernoff-Hoeffding Theorem](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/tree/master/Research%20on%20Questions/6/Proofs_for_Chernoff-Hoeffding_Theorem.pdf) - 肖云轩
   - Class 7:
-    - [A solution for the homework (need help! It seems that a opposite conclusion has been proved)](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/tree/master/Research%20on%20Questions/7/Solution_for_the_HW.pdf) - 吴章昊 
+    - [A solution for the homework (need help! It seems that a opposite conclusion has been proved)](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/tree/master/Research%20on%20Questions/7/Solution_for_the_HW.pdf) - 吴章昊
   - Class 8:
     - [Some Simple Thoughts](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/8/SomeThoughts_Pascalprimer.pdf) - 金之涵
   - Class 12:
