@@ -1,0 +1,123 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{fact}[thm]{Fact}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{eg}{Example}
+\newtheorem{ex}{Exercise}
+\newtheorem{defi}{Definition}
+\theoremstyle{definition}
+\newtheorem{hw}{Problem}
+\newenvironment{sol}
+  {\par\vspace{3mm}\noindent{\it Solution}.}
+  {\qed}
+
+\newcommand{\ov}{\overline}
+\newcommand{\cb}{{\cal B}}
+\newcommand{\cc}{{\cal C}}
+\newcommand{\cd}{{\cal D}}
+\newcommand{\ce}{{\cal E}}
+\newcommand{\cf}{{\cal F}}
+\newcommand{\ch}{{\cal H}}
+\newcommand{\cl}{{\cal L}}
+\newcommand{\cm}{{\cal M}}
+\newcommand{\cp}{{\cal P}}
+\newcommand{\cs}{{\cal S}}
+\newcommand{\cz}{{\cal Z}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\la}{\leftarrow}
+\newcommand{\Ra}{\Rightarrow}
+\newcommand{\dist}{\mbox{\rm dist}}
+\newcommand{\bn}{{\mathbf N}}
+\newcommand{\bz}{{\mathbf Z}}
+
+\setlength{\parindent}{0pt}
+%\setlength{\parskip}{2ex}
+\newenvironment{proofof}[1]{\bigskip\noindent{\itshape #1. }}{\hfill$\Box$\medskip}
+
+\renewcommand{\familydefault}{pnc}
+
+\begin{document}
+
+\bigskip
+
+\begin{center}
+{\LARGE\bf Hook Length Formula}
+\end{center}
+
+\begin{center}
+{516030910578 Zhihan Jin}
+\end{center}
+
+\bigskip
+
+\begin{proof}
+	
+	This is a problem generalize from the exercise 'Probabilistic Chain' in class. 
+	
+	I was trying to find a combinatoric proof but failed several times. I now give a probabilistic proof from \cite{probabilistic}.
+	
+	Let $\lambda = (\lambda_1, \lambda_2, \cdots, \lambda_m)$ be a partition of a given $n$, where $\lambda_1 \le \lambda_2 \le \cdots \le \lambda_m$. A Young diagram is a left-justified array of square cells with $m$ rows and $\lambda_i$ elements one by one in each row. A standard Young tableau of $\lambda$ is a Young diagram with all cells put a distinct integer in $[n]$ such that each row and column form increasing sequences. Define hook $h_{i, j}$ to be the number of cells $(i', j')$ satisfying $(i' > i) \cap (j' = j) \cup (j' > j) \cap (i' = i)$. What I want to proof is that the total number of standard Young tableaux is $\dfrac{n!}{\prod_{(i,j) \in \lambda}{h_{i,j}}}$ where $\lambda$ can also represent a Young diagram.
+	
+	Let's begin!
+	
+	Define $f_\lambda = \dfrac{\abs{\lambda}!}{\prod_{(i,j) \in \lambda}{h_{i,j}}}$. Let $n = \abs{\lambda}, g_\lambda$ be the total number of standard Young tableaux, then it is clear that $n$ must be put in the corner(no right or down cell). Let $\lambda(\alpha)$ be $\lambda \backslash (\alpha, \lambda_\alpha)$ and $g_{\lambda(\alpha)}$ be 0 if $\lambda(\alpha)$ is not Young diagram. Considering the cell containing $n$ must be a corner, we have 
+	
+	\begin{equation*}
+		g_\lambda = \sum\limits_{\alpha}g_{\lambda(\alpha)} \Longrightarrow \sum\limits_{\alpha}\dfrac{g_{\lambda(\alpha)}}{g_{\lambda}} = 1
+	\end{equation*}
+	
+	Let $f_{\emptyset} = 1$, then We only need to proof the following equation and by deduction we can proof the statement.
+	
+	\begin{equation*}
+		\sum\limits_{\alpha}\dfrac{f_{\lambda(\alpha)}}{f_{\lambda}} = 1
+	\end{equation*}
+	
+	Further, if $(\alpha, \beta = \lambda_\alpha)$ is a corner, then
+	
+	\begin{equation} \label{poly}
+		\dfrac{f_{\lambda(\alpha)}}{f_{\lambda}} = \dfrac{1}{n}\prod_{0 < i < \beta}(1+\dfrac{1}{h_{\alpha, i} - 1})\prod_{0 < j < \alpha}(1+\dfrac{1}{h_{j, \beta} - 1})
+	\end{equation}
+	
+	Consider a probabilistic game: we randomly choose one cell in $\lambda$ and then repeat uniformly choosing one next among the hook now until reaching the corner. 
+	
+	Consider one situation path $(a_1, b_1), (a_2, b_2), \cdots, (a_l, b_l) = (\alpha, \beta)$. Let the $a$ projection and $b$ projection be $A = \{a_1, a_2, \cdot, a_l\}$ and $B = \{b_1, b_2, \cdot, b_l\}$ respectively, where $A$ and $B$ are sets, not multi-sets.
+
+	I claim that $Prob(A, B | a_1, b_1) = \prod\limits_{b \in B, b != \beta}\dfrac{1}{h_{\alpha, b} - 1}\prod\limits_{a \in A, a != \alpha}\dfrac{1}{h_{a, \beta} - 1}$.
+	
+	By deduction, we have 
+	
+	\begin{align*}
+		Prob(A, B | a_1, b_1) &= \dfrac{1}{h_{a_1,b_1} - 1}\left[Prob(A \backslash a_1, B | a_2, b_1) + Prob(A, B \backslash b_1 | a_1, b_2)\right] \\
+		&= \dfrac{1}{h_{a_1,b_1} - 1}\left[\Pi(h_{a_1,\beta} - 1) + \Pi(h_{\alpha, b_1} - 1) \right] \\
+		&= \Pi = \prod\limits_{b \in B, b != \beta}\dfrac{1}{h_{\alpha, b} - 1}\prod\limits_{a \in A, a != \alpha}\dfrac{1}{h_{a, \beta} - 1}
+	\end{align*}
+	
+	Using Law of Total Probability, we have the following, which is exactly (\ref{poly}).
+	
+	\begin{align*}
+		Prob(\alpha, \beta) &= \sum\limits_{(a_1,b_1) \in \lambda}Prob(\alpha, \beta | a_1, b_1)\dfrac{1}{n} \\
+		&= \dfrac{1}{n}\sum\limits_{A,B}Prob(A, B|a_1,b_1) \\
+		&= \dfrac{1}{n}\sum\limits_{A,B}\prod\limits_{b \in B, b != \beta}\dfrac{1}{h_{\alpha, b} - 1}\prod\limits_{a \in A, a != \alpha}\dfrac{1}{h_{a, \beta} - 1} \\
+		&= \dfrac{1}{n}\prod_{0 < i < \beta}(1+\dfrac{1}{h_{\alpha, i} - 1})\prod_{0 < j < \alpha}(1+\dfrac{1}{h_{j, \beta} - 1})
+	\end{align*}
+	
+	The last equation is similar to a Knapsack problem or a generating function problem.
+	
+	Thus, the theorem is finally proved!
+	
+\end{proof}
+
+	\newpage
+	
+	\bibliographystyle{plain}
+	\bibliography{acl}
+
+\end{document}
