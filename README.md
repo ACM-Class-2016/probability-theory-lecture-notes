@@ -52,6 +52,7 @@ To make a contribution to this repository, you can:
   - [Notes for Class 10](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/10/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B010-LYK.pdf) - 李怿铠
   - [Notes for Class 12](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/ac75d73a3dc9ea3c7ff03bcb34fc0a1fbc06da98/Reference%20Notes/12/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B012-LYK.pdf) - 李怿铠
   - [Notes for Class 14](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/14/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B014-LYK.pdf) - 李怿铠
+  - [Notes for Class 15](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/15/CJX) - 陈竞潇
   - [Notes for Class 15](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/15/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B015-LYK.pdf) - 李怿铠
   - [Notes for Class 16](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/16/Class16-%E8%B0%A2%E9%9B%A8%E6%A1%90.pdf) - 谢雨桐
 
