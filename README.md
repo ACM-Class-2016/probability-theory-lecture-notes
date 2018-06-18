@@ -89,3 +89,4 @@ To make a contribution to this repository, you can:
 
 ### Reference Material
   - [The Sleeping Beauty Controversy](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Material/The%20Sleeping%20Beauty%20Controversy.pdf)
+  - [对概率方法的一些探究](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Material/Probabilistic_Method.pdf) - 徐子昊
