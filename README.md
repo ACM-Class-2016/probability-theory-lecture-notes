@@ -71,7 +71,7 @@ To make a contribution to this repository, you can:
     - [快速排序算法的数学期望](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/4/QuickSort.pdf) - 李江贝
   - Class 6:
     - [A proof for Weierstrass Approximation Theorem](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/tree/master/Research%20on%20Questions/6/Proof_for_Weierstrass_Approximation_Theorem.pdf) - 肖云轩
-    - [Proofs for Chernoff-Hoeffding Theorem](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/tree/master/Research%20on%20Questions/6/Proofs_for_Chernoff-Hoeffding_Theorem.pdf) - 肖云轩  
+    - [Proofs and Applications for Chernoff-Hoeffding Theorem](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/tree/master/Research%20on%20Questions/6/Proofs_and_Interesting_applications_of_Chernoff-Hoeffding_Theorem.pdf) - 肖云轩  
   - Class 7:
     - [A solution for the homework (need help! It seems that a opposite conclusion has been proved)](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/tree/master/Research%20on%20Questions/7/Solution_for_the_HW.pdf) - 吴章昊 
   - Class 8:
