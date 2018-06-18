@@ -1,8 +1,0 @@
-#+AUTHOR: Lmxyy
-#+TITLE: Course Arrangement of Probability Theory
-* Elementary Probability
-* Discret Random Variables
-* Continuous Random Variables
-* Limit Theorems
-* Markov Chain(Random Walk)
-* Graphical Model
