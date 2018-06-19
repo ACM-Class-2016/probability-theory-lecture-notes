@@ -38,6 +38,7 @@ To make a contribution to this repository, you can:
   - [Lecture Notes for Class 19](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/19/19_lc.pdf) - 刘畅
   - [Lecture Notes for Class 20](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/20/20lhh.pdf) - 林虹灏
   - [Lecture Notes for Class 20](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/20/Lecture%20Notes%20of%20Probability%20Theory%20-%20Lesson%2020.pdf) - 范舟
+  - [Lecture Notes for Class 20](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/f29e5479483de151b075d195ca66f54864195ba4/Lecture%20Notes/20/LectureNotes20.pdf) - 王翰竟
 ### **Reference Notes**
   - [Notes for Class 1](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/1/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B001-LYK.pdf) - 李怿铠
   - [Notes for Class 2](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/2/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B002-LYK.pdf) - 李怿铠
