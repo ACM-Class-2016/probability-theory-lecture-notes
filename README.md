@@ -97,7 +97,7 @@ To make a contribution to this repository, you can:
     - [Solution and insteresting facts](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/19/2.pdf) - 巫宇威
   - Class 20:
     - [Solutions](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/20/Solutions-Lecture-20-%E8%8C%83%E8%88%9F.pdf) - 范舟
-    [Lecture Notes for Class 20](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/f29e5479483de151b075d195ca66f54864195ba4/Lecture%20Notes/20/LectureNotes20.pdf) - 王翰竟
+    - [Lecture Notes for Class 20](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/f29e5479483de151b075d195ca66f54864195ba4/Lecture%20Notes/20/LectureNotes20.pdf) - 王翰竟
   - Ensemble:
     - [Solutions for Miscellaneous Problems and Homework](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/Ensemble/Solutions_to_Miscellaneous_Problems_and_Homework.pdf) - 孙雪晖
 
