@@ -1,6 +1,6 @@
 # probability-theory-lecture-notes
 
-### Lecture notes of Probability Theory ( Spring Semester of 2018 - Prof. Wu )  
+### Lecture notes of Probability Theory ( Spring Semester of 2018 - Prof. Wu )
 To make a contribution to this repository, you can:
 - make a fork of the repository, add changes to your fork and then create a pull request
 - or you can contact 范舟 for direct write access
@@ -30,12 +30,14 @@ To make a contribution to this repository, you can:
   - [Lecture Notes for Class 12](https://github.com/TianBoyu/probability-theory-lecture-notes/blob/master/Lecture%20Notes/12/Lecture%20Notes%20of%20Probability%20Theory%20-%20Lesson%2012.pdf) - 田博宇
   - [Lecture Notes for Class 13](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/13/lecture-notes13.pdf) - 范裕达
   - [Lecture Notes for Class 14](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/14/14.pdf) - 谢雨桐
+  - [Lecture Notes for Class 15](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/15/15.pdf) - 陈竞潇
   - [Lecture Notes for Class 16](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/16/16.pdf) - 李江贝
   - [Lecture Notes for Class 17](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/17/17.pdf) - 徐逸凡
   - [Lecture Notes for Class 18](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/18/18.pdf) - 汪陶磊
   - [Lecture Notes for Class 19](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/19/19_lxy.pdf) - 刘啸远
   - [Lecture Notes for Class 19](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/19/19_lc.pdf) - 刘畅
   - [Lecture Notes for Class 20](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/20/20lhh.pdf) - 林虹灏
+  - [Lecture Notes for Class 20](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Lecture%20Notes/20/Lecture%20Notes%20of%20Probability%20Theory%20-%20Lesson%2020.pdf) - 范舟
 ### **Reference Notes**
   - [Notes for Class 1](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/1/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B001-LYK.pdf) - 李怿铠
   - [Notes for Class 2](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/2/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B002-LYK.pdf) - 李怿铠
@@ -50,6 +52,7 @@ To make a contribution to this repository, you can:
   - [Notes for Class 10](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/10/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B010-LYK.pdf) - 李怿铠
   - [Notes for Class 12](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/ac75d73a3dc9ea3c7ff03bcb34fc0a1fbc06da98/Reference%20Notes/12/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B012-LYK.pdf) - 李怿铠
   - [Notes for Class 14](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/14/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B014-LYK.pdf) - 李怿铠
+  - [Notes for Class 15](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/15/CJX) - 陈竞潇
   - [Notes for Class 15](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/15/%E6%A6%82%E7%8E%87%E8%AE%BA%E7%AC%94%E8%AE%B015-LYK.pdf) - 李怿铠
   - [Notes for Class 16](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Notes/16/Class16-%E8%B0%A2%E9%9B%A8%E6%A1%90.pdf) - 谢雨桐
 
@@ -62,19 +65,22 @@ To make a contribution to this repository, you can:
   - Class 3:
     - [Solution](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/3/Solution_%E7%8E%8B%E5%A4%A9%E5%93%B2.pdf) - 王天哲
     - [Some Thoughts and Solutions](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/3/Thoughts_%E9%87%91%E4%B9%8B%E6%B6%B5.pdf) - 金之涵
-    - [A thought to P(AB!=C|ABr=Cr)](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/3/Thoughts_%E4%B8%81%E5%B0%A7%E5%B0%A7.pdf) - 丁尧尧 
+    - [A thought to P(AB!=C|ABr=Cr)](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/3/Thoughts_%E4%B8%81%E5%B0%A7%E5%B0%A7.pdf) - 丁尧尧
     - [Thoughts](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/3/Thoughts_%E5%90%B4%E7%AB%A0%E6%98%8A.pdf) - 吴章昊
     - [对猎犬问题的补充](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/3/thoughts_Xu.pdf) - 徐子昊
     - [日出问题](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/1/Sunrise_problem.pdf) - 林耘丰
+    - [Solutions](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/3/Solutions-Lecture-3-%E8%8C%83%E8%88%9F.pdf) - 范舟
   - Class 4:
     - [Solutions](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/4/Solutions-Lecture-4-%E8%8C%83%E8%88%9F.pdf) - 范舟
     - [Solutions](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/4/Thoughts_%E6%9D%8E%E6%B2%90%E9%98%B3.pdf) - 李沐阳
     - [快速排序算法的数学期望](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/4/QuickSort.pdf) - 李江贝
+  - Class 5:
+    - [A Probalistic Proof of Hook Length Formula](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/tree/master/Research%20on%20Questions/5/HookLengthThm-ZhihanJin-516030910578.pdf) - 金之涵
   - Class 6:
     - [A proof for Weierstrass Approximation Theorem](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/tree/master/Research%20on%20Questions/6/Proof_for_Weierstrass_Approximation_Theorem.pdf) - 肖云轩
-    - [Proofs and Applications for Chernoff-Hoeffding Theorem](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/tree/master/Research%20on%20Questions/6/Proofs_and_Interesting_applications_of_Chernoff-Hoeffding_Theorem.pdf) - 肖云轩  
+    - [Proofs and Applications for Chernoff-Hoeffding Theorem](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/tree/master/Research%20on%20Questions/6/Proofs_and_Interesting_applications_of_Chernoff-Hoeffding_Theorem.pdf) - 肖云轩
   - Class 7:
-    - [A solution for the homework](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/tree/master/Research%20on%20Questions/7/Solution_for_the_HW.pdf) - 吴章昊 
+    - [A solution for the homework](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/tree/master/Research%20on%20Questions/7/Solution_for_the_HW.pdf) - 吴章昊
   - Class 8:
     - [Some Simple Thoughts](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/8/SomeThoughts_Pascalprimer.pdf) - 金之涵
   - Class 11:
@@ -87,6 +93,9 @@ To make a contribution to this repository, you can:
     - [士兵拿枪——帽子问题的推广](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/14/Soldiers.pdf) - 李江贝
   - Class 19:
     - [平稳分布和平均回访时间的关系证明](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/19/some_thoughts.pdf) - 李江贝
+  - Class 20:
+    - [Solutions](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/20/Solutions-Lecture-20-%E8%8C%83%E8%88%9F.pdf) - 范舟
 
 ### Reference Material
   - [The Sleeping Beauty Controversy](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Material/The%20Sleeping%20Beauty%20Controversy.pdf)
+  - [对概率方法的一些探究](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Material/Probabilistic_Method.pdf) - 徐子昊
