@@ -87,10 +87,13 @@ To make a contribution to this repository, you can:
     - [Some Simple Thoughts](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/8/SomeThoughts_Pascalprimer.pdf) - 金之涵
   - Class 11:
     - [A different solution for phone broken](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/11/A%20different%20solution%20for%20the%20phone%20broken%20problem.pdf) - 吴章昊
+    - [Notes on MCMC](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/11/Notes%20on%20MCMC.pdf) - 田博宇
   - Class 12:
     - [Some Solutions](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/87876d4b50c65c4f277a40c85ce8e75bcb18c4e0/Research%20on%20Questions/12/SomeSolutions.pdf) - 徐逸凡
     - [Ergodicity定理的表述和证明](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/12/%E9%97%AE%E9%A2%98%E8%A7%A3%E7%AD%94.pdf) - 田博宇
     - [Ergodicity定理再探](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/12/Ergodicity%E5%AE%9A%E7%90%86%E5%86%8D%E6%8E%A2.pdf) - 吴章昊
+    - Class 13: 
+    - [Notes on Bound of Mixing Time](https://github.com/xuyifangreeneyes/probability-theory-lecture-notes/tree/master/Research%20on%20Questions/13) -田博宇
   - Class 14:
     - [士兵拿枪——帽子问题的推广](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/14/Soldiers.pdf) - 李江贝
   - Class 19:
