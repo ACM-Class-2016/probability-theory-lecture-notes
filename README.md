@@ -96,6 +96,8 @@ To make a contribution to this repository, you can:
     - [Solution and insteresting facts](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/19/2.pdf) - 巫宇威
   - Class 20:
     - [Solutions](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/20/Solutions-Lecture-20-%E8%8C%83%E8%88%9F.pdf) - 范舟
+  - Ensemble:
+    - [Solutions for Miscellaneous Problems and Homework](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/Ensemble/Solutions_to_Miscellaneous_Problems_and_Homework.pdf) - 孙雪晖
 
 ### Reference Material
   - [The Sleeping Beauty Controversy](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Reference%20Material/The%20Sleeping%20Beauty%20Controversy.pdf)
