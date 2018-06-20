@@ -98,7 +98,7 @@ To make a contribution to this repository, you can:
     - [士兵拿枪——帽子问题的推广](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/14/Soldiers.pdf) - 李江贝
   - Class 19:
     - [平稳分布和平均回访时间的关系证明](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/19/some_thoughts.pdf) - 李江贝
-    - [Solution and insteresting facts](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/19/2.pdf) - 巫宇威
+    - [Solution and insteresting facts](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/19/Exe.pdf) - 巫宇威
   - Class 20:
     - [Solutions](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/master/Research%20on%20Questions/20/Solutions-Lecture-20-%E8%8C%83%E8%88%9F.pdf) - 范舟
     - [Lecture Notes for Class 20](https://github.com/ACM-Class-2016/probability-theory-lecture-notes/blob/f29e5479483de151b075d195ca66f54864195ba4/Lecture%20Notes/20/LectureNotes20.pdf) - 王翰竟
